@@ -203,10 +203,16 @@ nav.tabs button.on{color:var(--ink)}
 <div id="app"><div class="empty">Loading…</div></div>
 
 <script>
-const DAYS = ["sun","mon","tue","wed","thu","fri","sat"];
-const DAY_SHORT = {mon:"Mon",tue:"Tue",wed:"Wed",thu:"Thu",fri:"Fri",sat:"Sat",sun:"Sun"};
-const DAY_FULL = {mon:"Monday",tue:"Tuesday",wed:"Wednesday",thu:"Thursday",fri:"Friday",sat:"Saturday",sun:"Sunday"};
-const WEEK_ORDER = ["mon","tue","wed","thu","fri","sat","sun"];
+// Days are identified by date ("2026-11-14"). The workout for a date comes from
+// plan.cycle (repeating order from a start date) or, if absent, plan.week (by weekday).
+const WD = ["sun","mon","tue","wed","thu","fri","sat"];
+const pad = n => String(n).padStart(2,"0");
+function iso(d){ return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate()); }
+function fromIso(s){ const [y,m,d]=s.split("-").map(Number); return new Date(y,m-1,d); }
+function addDays(s,n){ const d=fromIso(s); d.setDate(d.getDate()+n); return iso(d); }
+function dayShort(s){ return fromIso(s).toLocaleDateString("en-IN",{weekday:"short"}); }
+function dayFull(s){ return fromIso(s).toLocaleDateString("en-IN",{weekday:"long",day:"numeric",month:"short"}); }
+const isIso = s => /^\d{4}-\d{2}-\d{2}$/.test(s||"");
 const SEC = {warmup:"Warm-up", main:"Workout", cooldown:"Finish"};
 
 /* icons (inline SVG, inherit color) */
@@ -237,7 +243,7 @@ const store = {
   get(k, d){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
   set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
 };
-function todayKey(){ return DAYS[new Date().getDay()]; }
+function todayKey(){ return iso(new Date()); }
 function dateKey(){ const d=new Date(); return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(); }
 // progress is saved per date, so it resets on its own every day
 function prog(){ return store.get("prog:"+dateKey(), {}); }
@@ -266,7 +272,15 @@ function toast(t){ const d=document.createElement("div"); d.className="toast"; d
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function ytId(u){ if(!u) return null; const m = String(u).match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/); return m ? m[1] : (/^[\w-]{11}$/.test(u) ? u : null); }
 function thumb(ex){ const id = ytId(ex.video); return id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : ""; }
-function workoutFor(day){ return P.workouts[P.week[day]] || P.workouts.rest || {name:"Rest Day",warmup:[],main:[],cooldown:[]}; }
+function workoutKeyFor(day){
+  const c = P.cycle;
+  if(c?.order?.length && isIso(c.start)){
+    const n = c.order.length, diff = Math.round((fromIso(day) - fromIso(c.start)) / 864e5);
+    return c.order[((diff % n) + n) % n];
+  }
+  return P.week?.[WD[fromIso(day).getDay()]];
+}
+function workoutFor(day){ return P.workouts[workoutKeyFor(day)] || P.workouts.rest || {name:"Rest Day",warmup:[],main:[],cooldown:[]}; }
 function items(w){ const out=[]; ["warmup","main","cooldown"].forEach(s => (w[s]||[]).forEach((it,i)=>out.push({sec:s,i,it}))); return out; }
 function key(day,sec,i){ return day+"/"+sec+"/"+i; }
 function setsOf(it){ return (it.warmupSets || 0) + (it.sets || 1); }
@@ -315,7 +329,7 @@ function route(){
   if(view==="ex") return renderEx(a, b, +c);      // #ex/day/section/index
   if(view==="lib" && a) return renderLibEx(a);    // #lib/id
   if(view==="lib") return renderLib();
-  if(view==="day" && a) selDay = a;
+  selDay = (view==="day" && isIso(a)) ? a : todayKey();
   renderHome();
 }
 
@@ -333,15 +347,16 @@ function renderHome(){
     ${P.message ? `<div class="msg">${I.info()}<span>${esc(P.message)}</span></div>` : ""}
   </div></header><div class="wrap">`;
 
-  html += `<div class="week">` + WEEK_ORDER.map(d=>{
+  // today + the next 6 days
+  html += `<div class="week">` + [0,1,2,3,4,5,6].map(n=>addDays(todayKey(),n)).map(d=>{
     const ww = workoutFor(d);
-    return `<button class="day ${d===selDay?"sel":""} ${d===todayKey()?"today":""}" onclick="go('day/${d}')" aria-label="${DAY_FULL[d]}: ${esc(ww.name)}">
-      <span class="d">${DAY_SHORT[d]}</span><span class="dot" style="background:${ww.color||"#888"}"></span>
+    return `<button class="day ${d===selDay?"sel":""} ${d===todayKey()?"today":""}" onclick="go('day/${d}')" aria-label="${dayFull(d)}: ${esc(ww.name)}">
+      <span class="d">${dayShort(d)}</span><span class="dot" style="background:${ww.color||"#888"}"></span>
       <span class="t">${esc((ww.name||"").replace(/ Day$/,""))}</span></button>`;
   }).join("") + `</div>`;
 
   html += `<div class="hero" style="background:${w.color||"#444"}">
-    <div class="lbl">${isToday ? "Today's workout" : DAY_FULL[selDay]}</div>
+    <div class="lbl">${isToday ? "Today's workout" : dayFull(selDay)}</div>
     <h2>${esc(w.name)}</h2><div class="focus">${esc(w.focus||"")}</div>
     ${w.note ? `<div class="note">${esc(w.note)}</div>` : ""}
     ${st.n ? `<div class="meta"><span>${I.dumb()} ${st.n} exercises</span><span>${I.clock()} About ${st.mins} min</span></div>` : ""}
@@ -527,7 +542,7 @@ function exBody(ex){
 function renderLib(q=""){
   const ids = Object.keys(P.exercises);
   const used = {};
-  WEEK_ORDER.forEach(d=>{ const w=workoutFor(d); items(w).forEach(x=>{ (used[x.it.ex] ||= new Set()).add(w.name); }); });
+  Object.values(P.workouts).forEach(w=>{ items(w).forEach(x=>{ (used[x.it.ex] ||= new Set()).add(w.name); }); });
   const groups = {};
   ids.forEach(id=>{ const ex=P.exercises[id];
     const hay = [ex.name, ex.about, ex.part, ex.group].join(" ").toLowerCase();
