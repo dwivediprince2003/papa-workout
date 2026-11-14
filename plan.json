@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-14g",
+  "version": "2026-11-14h",
   "title": "Workout Plan",
   "greeting": "Hello Papa",
   "name": "Papa",
@@ -27,7 +27,7 @@
     "push": {
       "name": "Push Day",
       "focus": "Chest, Shoulders",
-      "color": "#D9532B",
+      "color": "#FF5A1F",
       "warmup": [
         {
           "ex": "jog"
@@ -88,7 +88,7 @@
     "back": {
       "name": "Back Day",
       "focus": "Back, Rear shoulders, Traps",
-      "color": "#2A72A8",
+      "color": "#2E8BFF",
       "warmup": [
         {
           "ex": "jog"
@@ -149,7 +149,7 @@
     "arms": {
       "name": "Arms Day",
       "focus": "Triceps, Biceps, Forearms",
-      "color": "#B8860B",
+      "color": "#B05CFF",
       "warmup": [
         {
           "ex": "jog"
@@ -224,7 +224,7 @@
     "legs": {
       "name": "Leg Day",
       "focus": "Thighs, Hamstrings, Inner thighs, Calves",
-      "color": "#2E9A62",
+      "color": "#00D98B",
       "warmup": [
         {
           "ex": "jog"
@@ -292,7 +292,7 @@
     "rest": {
       "name": "Rest Day",
       "focus": "Recover",
-      "color": "#6E63A8",
+      "color": "#5E6578",
       "note": "Rest today. Take an easy walk and drink water.",
       "warmup": [],
       "main": [],
