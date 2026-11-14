@@ -1,14 +1,15 @@
 {
-  "version": "2026-11-14c",
+  "version": "2026-11-14e",
   "title": "Workout Plan",
   "greeting": "Hello Papa",
-  "message": "Start slow. Use light weight. Stop if you feel pain.",
+  "name": "Papa",
   "howTo": [
-    "The 4 days repeat: Push, Back, Arms, Legs, then Push again.",
-    "Every exercise starts with 1 warm-up set: light weight, easy.",
-    "Then do 3 working sets of 12 reps.",
-    "Save your weight in the app. Next time, try a little more weight or 1–2 more reps.",
-    "Finish every day with 20 minutes of incline walking."
+    "Push → Back → Arms → Legs, then repeat. Sunday is rest.",
+    "Warm up first. Pick any 4–5 moves, about 5 minutes.",
+    "Each exercise: 1 light warm-up set, then 3 sets of 12.",
+    "Save your weight. Next time, try a little more.",
+    "End every day with 20 min incline walk.",
+    "Stop if you feel pain."
   ],
   "cycle": {
     "start": "2026-11-14",
@@ -17,6 +18,9 @@
       "back",
       "arms",
       "legs"
+    ],
+    "restDays": [
+      "sun"
     ]
   },
   "workouts": {
@@ -26,12 +30,22 @@
       "color": "#D9532B",
       "warmup": [
         {
-          "ex": "treadmill_warmup",
-          "time": "5 min"
+          "ex": "jog"
         },
         {
-          "ex": "arm_circles",
-          "reps": "15 forward + 15 back"
+          "ex": "wall_march"
+        },
+        {
+          "ex": "arm_swings"
+        },
+        {
+          "ex": "side_stretch"
+        },
+        {
+          "ex": "wrist_circles"
+        },
+        {
+          "ex": "neck_stretch"
         }
       ],
       "main": [
@@ -77,12 +91,22 @@
       "color": "#2A72A8",
       "warmup": [
         {
-          "ex": "treadmill_warmup",
-          "time": "5 min"
+          "ex": "jog"
         },
         {
-          "ex": "arm_circles",
-          "reps": "15 forward + 15 back"
+          "ex": "wall_march"
+        },
+        {
+          "ex": "arm_swings"
+        },
+        {
+          "ex": "side_stretch"
+        },
+        {
+          "ex": "wrist_circles"
+        },
+        {
+          "ex": "neck_stretch"
         }
       ],
       "main": [
@@ -128,12 +152,22 @@
       "color": "#B8860B",
       "warmup": [
         {
-          "ex": "treadmill_warmup",
-          "time": "5 min"
+          "ex": "jog"
         },
         {
-          "ex": "arm_circles",
-          "reps": "15 forward + 15 back"
+          "ex": "wall_march"
+        },
+        {
+          "ex": "arm_swings"
+        },
+        {
+          "ex": "side_stretch"
+        },
+        {
+          "ex": "wrist_circles"
+        },
+        {
+          "ex": "neck_stretch"
         }
       ],
       "main": [
@@ -193,16 +227,22 @@
       "color": "#2E9A62",
       "warmup": [
         {
-          "ex": "treadmill_warmup",
-          "time": "5 min"
+          "ex": "jog"
         },
         {
-          "ex": "hip_circles",
-          "reps": "10 each way"
+          "ex": "wall_march"
         },
         {
-          "ex": "bw_squat",
-          "reps": "10"
+          "ex": "knee_circles"
+        },
+        {
+          "ex": "ankle_circles"
+        },
+        {
+          "ex": "toe_touch"
+        },
+        {
+          "ex": "side_stretch"
         }
       ],
       "main": [
@@ -253,86 +293,129 @@
       "name": "Rest Day",
       "focus": "Recover",
       "color": "#6E63A8",
-      "note": "No gym today. Take an easy 20–30 min walk. Drink water. Sleep well. Muscles grow when you rest.",
+      "note": "Rest today. Take an easy walk and drink water.",
       "warmup": [],
       "main": [],
       "cooldown": []
     }
   },
   "exercises": {
-    "treadmill_warmup": {
-      "name": "Easy Treadmill Walk",
-      "about": "Walk slowly to warm up your body",
+    "jog": {
+      "name": "Walk or Jog in Place",
       "group": "Warm-up",
       "part": "Full body",
-      "feel": "Your body gets warm. Breathing a little faster. Not tired.",
-      "equipment": "Treadmill",
-      "video": "https://www.youtube.com/watch?v=-afM1L4v2a4",
+      "feel": "Body gets warm. Breathing a little faster.",
+      "equipment": "None",
+      "demo": "https://static.exercisedb.dev/media/CcWEoWV.gif",
       "steps": [
-        "Start the treadmill at a slow speed (3–4 km/h). No incline.",
-        "Walk tall. Swing your arms.",
-        "After 2 minutes, go a little faster.",
-        "Walk for 5 minutes total."
-      ],
-      "mistakes": [
-        "Starting too fast",
-        "Holding the rails the whole time"
+        "Stay on the spot.",
+        "Walk or jog lightly. Swing your arms.",
+        "1–2 minutes."
       ]
     },
-    "arm_circles": {
-      "name": "Arm Circles",
-      "about": "Turn your arms in circles",
+    "wall_march": {
+      "name": "Wall March",
       "group": "Warm-up",
-      "part": "Shoulders",
-      "feel": "Shoulders feel loose and warm.",
+      "part": "Hips, Legs",
+      "feel": "Hips and thighs warm up.",
       "equipment": "None",
-      "video": "https://www.youtube.com/watch?v=UVMEnIaY8aU",
+      "demo": "https://static.exercisedb.dev/media/ealLwvX.gif",
       "steps": [
-        "Lift both arms to the side, at shoulder height.",
-        "Make small circles. Slowly make them bigger.",
-        "Go forward first, then backward."
-      ],
-      "mistakes": [
-        "Lifting shoulders up to the ears",
-        "Moving too fast"
+        "Hands on a wall, lean a little.",
+        "Lift one knee up, then the other.",
+        "10 each leg, slow."
       ]
     },
-    "hip_circles": {
-      "name": "Hip Circles",
-      "about": "Turn your hips in circles",
+    "arm_swings": {
+      "name": "Arm Swings",
       "group": "Warm-up",
-      "part": "Hips, Lower back",
-      "feel": "Hips and lower back feel loose.",
+      "part": "Chest, Shoulders",
+      "feel": "Chest opens up, shoulders loosen.",
       "equipment": "None",
-      "video": "https://www.youtube.com/watch?v=qkrJXGVj_OQ",
+      "demo": "https://static.exercisedb.dev/media/3uj0Ozg.gif",
       "steps": [
-        "Hands on your waist. Feet shoulder-width apart.",
-        "Slowly move your hips in a big circle.",
-        "Do the same number both ways."
-      ],
-      "mistakes": [
-        "Locking your knees"
+        "Arms straight in front.",
+        "Swing them open wide, then back together.",
+        "10–15 times."
       ]
     },
-    "bw_squat": {
-      "name": "Bodyweight Squat",
-      "about": "Sit down and stand up, no weight",
+    "side_stretch": {
+      "name": "Side Stretch",
       "group": "Warm-up",
-      "part": "Thighs, Hips",
-      "feel": "Front of thighs and hips get warm.",
+      "part": "Sides, Back",
+      "feel": "Stretch along your side.",
       "equipment": "None",
-      "video": "https://www.youtube.com/watch?v=P-yaD24bUE8",
+      "demo": "https://static.exercisedb.dev/media/1jXLYEw.gif",
       "steps": [
-        "Feet shoulder-width apart. Toes a little out.",
-        "Push your hips back, like sitting on a chair.",
-        "Keep your chest up and back straight.",
-        "Push through your heels to stand up."
-      ],
-      "mistakes": [
-        "Heels coming off the floor",
-        "Knees falling inward"
-      ],
-      "tip": "If it feels hard, put a chair behind you. Sit lightly on it, then stand."
+        "Reach one arm over your head.",
+        "Lean gently to the side.",
+        "5 each side."
+      ]
+    },
+    "wrist_circles": {
+      "name": "Wrist Circles",
+      "group": "Warm-up",
+      "part": "Wrists, Forearms",
+      "feel": "Wrists feel loose.",
+      "equipment": "None",
+      "demo": "https://static.exercisedb.dev/media/2zNKRUB.gif",
+      "steps": [
+        "Hold arms in front.",
+        "Turn wrists in circles.",
+        "10 each way."
+      ]
+    },
+    "neck_stretch": {
+      "name": "Neck Stretch",
+      "group": "Warm-up",
+      "part": "Neck",
+      "feel": "Gentle stretch on the side of the neck.",
+      "equipment": "None",
+      "demo": "https://static.exercisedb.dev/media/x2chWLO.gif",
+      "steps": [
+        "Tilt your head to one side.",
+        "Hold 10 seconds.",
+        "Then the other side."
+      ]
+    },
+    "knee_circles": {
+      "name": "Knee Circles",
+      "group": "Warm-up",
+      "part": "Knees",
+      "feel": "Knees feel warm and loose.",
+      "equipment": "None",
+      "demo": "https://static.exercisedb.dev/media/X7jbxra.gif",
+      "steps": [
+        "Feet together, hands on knees.",
+        "Move knees in small circles.",
+        "10 each way."
+      ]
+    },
+    "ankle_circles": {
+      "name": "Ankle Circles",
+      "group": "Warm-up",
+      "part": "Ankles",
+      "feel": "Ankles feel loose.",
+      "equipment": "None",
+      "demo": "https://static.exercisedb.dev/media/uL9CsKm.gif",
+      "steps": [
+        "Hold a wall. Lift one foot.",
+        "Turn the ankle in circles.",
+        "10 each way, each foot."
+      ]
+    },
+    "toe_touch": {
+      "name": "Toe Touch",
+      "group": "Warm-up",
+      "part": "Back of legs, Back",
+      "feel": "Stretch in the back of your legs.",
+      "equipment": "None",
+      "demo": "https://static.exercisedb.dev/media/BbfB8Gb.gif",
+      "steps": [
+        "Stand tall.",
+        "Slowly reach down toward your toes. Bend knees if needed.",
+        "Come up slowly. 8 times."
+      ]
     },
     "chest_press_machine": {
       "name": "Chest Press Machine",
@@ -341,6 +424,7 @@
       "part": "Chest, Front shoulders, Triceps",
       "feel": "Middle of your chest. Not your shoulders.",
       "equipment": "Chest press machine",
+      "demo": "https://static.exercisedb.dev/media/DOoWcnA.gif",
       "video": "https://www.youtube.com/watch?v=P8Hx90LdGH4",
       "steps": [
         "Set the seat so the handles are at mid-chest.",
@@ -362,6 +446,7 @@
       "part": "Chest",
       "feel": "Inside of your chest, near the middle.",
       "equipment": "Pec deck (fly) machine",
+      "demo": "https://static.exercisedb.dev/media/v3xmPAR.gif",
       "video": "https://www.youtube.com/watch?v=3jYo5cMU3d4",
       "steps": [
         "Set the seat so the handles are at chest height.",
@@ -382,6 +467,7 @@
       "part": "Shoulders, Triceps",
       "feel": "Top and front of your shoulders.",
       "equipment": "Shoulder press machine",
+      "demo": "https://static.exercisedb.dev/media/67n3r98.gif",
       "video": "https://www.youtube.com/watch?v=BAZkFGeUy5U",
       "steps": [
         "Set the seat so the handles are at shoulder height.",
@@ -403,6 +489,7 @@
       "part": "Side of shoulders",
       "feel": "Side of your shoulders. Not your neck.",
       "equipment": "Light dumbbells",
+      "demo": "https://static.exercisedb.dev/media/DsgkuIt.gif",
       "video": "https://www.youtube.com/watch?v=pgrWjBfaFe8",
       "steps": [
         "Stand with a light dumbbell in each hand.",
@@ -424,6 +511,7 @@
       "part": "Back (Lats), Biceps",
       "feel": "Sides of your back, under your arms. Not only your arms.",
       "equipment": "Lat pulldown machine",
+      "demo": "https://static.exercisedb.dev/media/eYnzaCm.gif",
       "video": "https://www.youtube.com/watch?v=SALxEARiMkw",
       "steps": [
         "Fix the thigh pad tight. Sit down.",
@@ -444,6 +532,7 @@
       "part": "Middle back, Lats, Biceps",
       "feel": "Middle of your back, between the shoulder blades.",
       "equipment": "Seated row machine",
+      "demo": "https://static.exercisedb.dev/media/7I6LNUG.gif",
       "video": "https://www.youtube.com/watch?v=TeFo51Q_Nsc",
       "steps": [
         "Set the seat so the handles are at chest height. Chest on the pad.",
@@ -464,6 +553,7 @@
       "part": "Rear shoulders, Upper back",
       "feel": "Back of your shoulders and upper back.",
       "equipment": "Pec deck machine (facing the pad)",
+      "demo": "https://static.exercisedb.dev/media/myfUsKf.gif",
       "video": "https://www.youtube.com/watch?v=v0rJuhEa59c",
       "steps": [
         "Sit facing the machine. Chest on the pad.",
@@ -485,6 +575,7 @@
       "part": "Traps (top of shoulders, neck)",
       "feel": "Top of your shoulders, near the neck.",
       "equipment": "Dumbbells",
+      "demo": "https://static.exercisedb.dev/media/NJzBsGJ.gif",
       "video": "https://www.youtube.com/watch?v=cJRVVxmytaM",
       "steps": [
         "Stand straight with a dumbbell in each hand at your sides.",
@@ -505,6 +596,7 @@
       "part": "Triceps (back of arm)",
       "feel": "Back of your upper arm.",
       "equipment": "Cable machine + straight bar",
+      "demo": "https://static.exercisedb.dev/media/3ZflifB.gif",
       "video": "https://www.youtube.com/watch?v=LXkCrxn3caQ",
       "steps": [
         "Stand facing the cable machine. Hold the bar, palms down.",
@@ -524,6 +616,7 @@
       "part": "Triceps (back of arm)",
       "feel": "Back of your upper arm, near the elbow.",
       "equipment": "Cable machine + rope",
+      "demo": "https://static.exercisedb.dev/media/dU605di.gif",
       "video": "https://www.youtube.com/watch?v=n2FSCB4vRSA",
       "steps": [
         "Attach the rope. Hold both ends, thumbs up.",
@@ -543,6 +636,7 @@
       "part": "Triceps (long head)",
       "feel": "Back of your upper arm, a stretch near the shoulder.",
       "equipment": "Cable machine + rope",
+      "demo": "https://static.exercisedb.dev/media/2IxROQ1.gif",
       "video": "https://www.youtube.com/watch?v=u4sEGN7FlzQ",
       "steps": [
         "Attach the rope low. Hold it and turn away from the machine.",
@@ -563,6 +657,7 @@
       "part": "Biceps (front of arm)",
       "feel": "Front of your upper arm.",
       "equipment": "Dumbbells or a bar",
+      "demo": "https://static.exercisedb.dev/media/NbVPDMW.gif",
       "video": "https://www.youtube.com/watch?v=XE_pHwbst04",
       "altVideo": {
         "label": "Watch the bar version",
@@ -579,7 +674,11 @@
         "Elbows moving forward",
         "Dropping the weight fast"
       ],
-      "tip": "You can use dumbbells or a bar. Both are fine."
+      "tip": "You can use dumbbells or a bar. Both are fine.",
+      "altDemo": {
+        "label": "Bar version",
+        "url": "https://static.exercisedb.dev/media/25GPyDY.gif"
+      }
     },
     "hammer_curl": {
       "name": "Hammer Curl",
@@ -588,6 +687,7 @@
       "part": "Biceps, Forearms",
       "feel": "Front of upper arm and top of the forearm.",
       "equipment": "Dumbbells",
+      "demo": "https://static.exercisedb.dev/media/2NpxjC1.gif",
       "video": "https://www.youtube.com/watch?v=8XLxfXROrTo",
       "steps": [
         "Stand straight. Hold dumbbells with thumbs pointing up.",
@@ -607,6 +707,7 @@
       "part": "Forearms",
       "feel": "Inside of your forearm.",
       "equipment": "Bar (light) + bench",
+      "demo": "https://static.exercisedb.dev/media/6kSxYnw.gif",
       "video": "https://www.youtube.com/watch?v=3VLTzIrnb5g",
       "steps": [
         "Sit on a bench. Forearms on your thighs, palms up.",
@@ -626,6 +727,7 @@
       "part": "Thighs (Quads), Hips",
       "feel": "Front of your thighs and your hips.",
       "equipment": "Leg press machine",
+      "demo": "https://static.exercisedb.dev/media/10Z2DXU.gif",
       "video": "https://www.youtube.com/watch?v=q4W4_VJbKW0",
       "steps": [
         "Keep your back and hips flat on the seat.",
@@ -647,6 +749,7 @@
       "part": "Front of thighs (Quads)",
       "feel": "Front of your thighs, above the knee.",
       "equipment": "Leg extension machine",
+      "demo": "https://static.exercisedb.dev/media/my33uHU.gif",
       "video": "https://www.youtube.com/watch?v=KtgdO4QEdHk",
       "steps": [
         "Sit on the machine. Pad sits on top of your ankles.",
@@ -667,6 +770,7 @@
       "part": "Back of thighs (Hamstrings)",
       "feel": "Back of your thighs.",
       "equipment": "Lying leg curl machine",
+      "demo": "https://static.exercisedb.dev/media/17lJ1kr.gif",
       "video": "https://www.youtube.com/watch?v=i6m3Vp9H40Y",
       "steps": [
         "Lie face down. Pad just above your heels.",
@@ -687,6 +791,7 @@
       "part": "Inner thighs",
       "feel": "Inside of your thighs.",
       "equipment": "Hip adductor machine",
+      "demo": "https://static.exercisedb.dev/media/oHsrypV.gif",
       "video": "https://www.youtube.com/watch?v=CjAVezAggkI",
       "steps": [
         "Sit with your back on the pad. Legs on the outside of the pads.",
@@ -706,6 +811,7 @@
       "part": "Calves",
       "feel": "Back of your lower legs (calves). Stretch at the bottom.",
       "equipment": "Leg press machine",
+      "demo": "https://static.exercisedb.dev/media/7B4F5nZ.gif",
       "video": "https://www.youtube.com/watch?v=PYZY00hI43w",
       "steps": [
         "Sit in the leg press. Put only your toes on the bottom of the platform.",
@@ -726,6 +832,7 @@
       "part": "Heart, Legs, Fat burn",
       "feel": "Breathing faster, legs working. You can still talk.",
       "equipment": "Treadmill",
+      "demo": "https://static.exercisedb.dev/media/rjiM4L3.gif",
       "video": "https://www.youtube.com/watch?v=9ccVxEvWtpA",
       "steps": [
         "Set speed to 4–5 km/h.",

@@ -27,15 +27,17 @@ Koi App Store / Play Store nahi chahiye. App ki language: simple English.
 ### Top
 ```json
 "greeting": "Hello Papa",
-"message": "Start slow. Use light weight. Stop if you feel pain."
+"name": "Papa",
+"howTo": ["...", "..."]
 ```
-`message` = home screen pe dikhne wala tip.
+`howTo` = home screen ke (i) button me dikhne wale tips. `name` = workout khatam hone pe "Great job, Papa!".
 
-### 1. Kaunse din kya karna hai — `week`
+### 1. Kaunse din kya karna hai — `cycle`
 ```json
-"week": { "mon": "push", "tue": "pull", "wed": "legs", "thu": "push", "fri": "pull", "sat": "legs", "sun": "rest" }
+"cycle": { "start": "2026-11-14", "order": ["push", "back", "arms", "legs"], "restDays": ["sun"] }
 ```
-Kisi bhi din ko kisi bhi workout se jod do. Naya workout (jaise `"full"` ya `"cardio"`) banana ho to `workouts` me add karo aur yahan naam likh do.
+`start` wale din `order` ka pehla workout hota hai, phir order repeat hota hai. `restDays` wale din (yahan Sunday) rest hota hai aur cycle aage nahi badhta.
+Fixed weekday plan chahiye to `cycle` hata ke `"week": { "mon": "push", ... }` likh do.
 
 ### 2. Workout — `workouts`
 ```json
@@ -59,13 +61,14 @@ Har exercise line:
   "group": "Back",                 // "All Exercises" me isi group me dikhega
   "part": "Back (Lats), Biceps",   // "Works on"
   "equipment": "Lat pulldown machine",
-  "video": "https://www.youtube.com/watch?v=SALxEARiMkw",
+  "demo": "https://static.exercisedb.dev/media/....gif",   // short looping illustration (main demo)
+  "video": "https://www.youtube.com/watch?v=SALxEARiMkw",  // "Full video" link
   "steps": ["...", "..."],
   "mistakes": ["..."],
   "tip": "..."                     // optional
 }
 ```
-Video badalna ho → bas YouTube link paste karo (normal, `youtu.be` ya `shorts` — sab chalega).
+`demo` = chhota animated illustration (ExerciseDB). `video` = YouTube ka poora video (optional, "Full video" link). Warm-up exercises me sirf `ex` likhna hai — papa khud choose karte hain.
 
 ## Update papa ke phone tak kaise pahunchta hai
 App har baar khulne pe `plan.json` naya fetch karta hai. File update karke publish karo → papa jab app kholenge,
