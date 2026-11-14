@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  pages: read
 
 jobs:
   build:
@@ -27,10 +28,11 @@ jobs:
           gradle-version: "8.9"
 
       - name: Point the app at this repo's GitHub Pages site
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          OWNER=$(echo "$GITHUB_REPOSITORY_OWNER" | tr '[:upper:]' '[:lower:]')
-          REPO="${GITHUB_REPOSITORY#*/}"
-          URL="https://${OWNER}.github.io/${REPO}/"
+          # Use the real Pages address (handles custom domains); force https
+          URL=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .html_url | sed 's#^http://#https://#')
           sed -i "s#https://example.github.io/papa-workout/#${URL}#" android/app/src/main/res/values/strings.xml
           echo "App URL: $URL"
 
