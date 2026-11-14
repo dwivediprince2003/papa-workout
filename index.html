@@ -125,6 +125,34 @@ h3.sec .n{background:var(--line);color:var(--ink);border-radius:8px;padding:1px 
 .target small{display:block;opacity:.7;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px}
 .target strong{font-size:24px;font-weight:800}
 .target.one{grid-template-columns:1fr}
+.target.four{grid-template-columns:repeat(4,1fr);gap:6px}
+.target.four strong{font-size:21px}
+.target.four small{letter-spacing:0;font-size:11px;white-space:nowrap}
+.target div.wu{background:var(--card);color:var(--ink);border:2px dashed var(--line)}
+.target div.wu small{color:var(--faint);opacity:1}
+.hint{margin:0 0 10px;color:var(--muted);font-size:15px}
+.weight .hint{margin:10px 0 0}
+.sets.grid{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:8px}
+.sets.grid .setb{min-width:0;padding:0 2px;font-size:17px;white-space:nowrap}
+.setb.wu{border-style:solid;color:var(--muted);font-size:14px !important}
+.setb.wu.done{color:#fff;background:#7FB89A;border-color:#7FB89A}
+.card.feel{border-left:5px solid #2A72A8}
+.card.feel h4{color:#2A72A8}
+@media (prefers-color-scheme: dark){ .card.feel h4{color:#7DB3E0} .card.feel{border-left-color:#7DB3E0} }
+.stepper{display:flex;align-items:center;gap:12px}
+.stepper button{width:64px;height:58px;border-radius:14px;background:var(--bg);border:2px solid var(--line);font-size:30px;font-weight:700;line-height:1}
+.stepper div{flex:1;text-align:center}
+.stepper strong{font-size:34px;font-weight:800;font-variant-numeric:tabular-nums}
+.stepper span{color:var(--muted);font-weight:700}
+.vlinks{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.vlinks .alt{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--ink);padding:9px 2px 0}
+.howto{background:var(--card);border-radius:16px;margin-top:14px;box-shadow:var(--shadow);padding:0 16px}
+.howto summary{list-style:none;display:flex;align-items:center;gap:8px;font-weight:800;font-size:17px;padding:14px 0;cursor:pointer}
+.howto summary::-webkit-details-marker{display:none}
+.howto summary::after{content:"Show";margin-left:auto;font-size:13px;color:var(--faint);font-weight:700}
+.howto[open] summary::after{content:"Hide"}
+.howto ol{margin:0;padding:0 0 14px 22px}
+.howto li{padding:3px 0;font-size:16px}
 .card{background:var(--card);border-radius:16px;padding:16px;margin-top:12px;box-shadow:var(--shadow)}
 .card h4{margin:0 0 10px;font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
 .card ol{margin:0;padding:0;list-style:none;counter-reset:s}
@@ -179,7 +207,7 @@ const DAYS = ["sun","mon","tue","wed","thu","fri","sat"];
 const DAY_SHORT = {mon:"Mon",tue:"Tue",wed:"Wed",thu:"Thu",fri:"Fri",sat:"Sat",sun:"Sun"};
 const DAY_FULL = {mon:"Monday",tue:"Tuesday",wed:"Wednesday",thu:"Thursday",fri:"Friday",sat:"Saturday",sun:"Sunday"};
 const WEEK_ORDER = ["mon","tue","wed","thu","fri","sat","sun"];
-const SEC = {warmup:"Warm-up", main:"Workout", cooldown:"Cool-down"};
+const SEC = {warmup:"Warm-up", main:"Workout", cooldown:"Finish"};
 
 /* icons (inline SVG, inherit color) */
 const I = {
@@ -196,6 +224,7 @@ const I = {
   star:  ()=>`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>`,
   steps: ()=>`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg>`,
   ext:   ()=>`<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>`,
+  target:()=>`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>`,
   search:()=>`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>`
 };
 
@@ -240,15 +269,39 @@ function thumb(ex){ const id = ytId(ex.video); return id ? `https://i.ytimg.com/
 function workoutFor(day){ return P.workouts[P.week[day]] || P.workouts.rest || {name:"Rest Day",warmup:[],main:[],cooldown:[]}; }
 function items(w){ const out=[]; ["warmup","main","cooldown"].forEach(s => (w[s]||[]).forEach((it,i)=>out.push({sec:s,i,it}))); return out; }
 function key(day,sec,i){ return day+"/"+sec+"/"+i; }
-function setsOf(it){ return it.sets || 1; }
+function setsOf(it){ return (it.warmupSets || 0) + (it.sets || 1); }
+function setLabel(it, s){ const w = it.warmupSets || 0;
+  if(!it.sets) return "Done";
+  return s < w ? (w > 1 ? `Warm-up ${s+1}` : "Warm-up") : `Set ${s-w+1}`; }
+
+/* weight log: per exercise, one entry per day (kept on this phone) */
+function wlog(ex){ return store.get("w:"+ex, []); }
+function weightInfo(ex){
+  const log = wlog(ex), today = dateKey();
+  const t = log.find(e=>e.d===today), prev = [...log].reverse().find(e=>e.d!==today);
+  return { today: t ? t.kg : null, prev };
+}
+function setWeight(ex, delta){
+  const log = wlog(ex), today = dateKey(), info = weightInfo(ex);
+  const base = info.today ?? (info.prev ? info.prev.kg : 0);
+  const kg = Math.max(0, Math.round((base + delta)*10)/10);
+  const i = log.findIndex(e=>e.d===today);
+  if(i>=0) log[i].kg = kg; else log.push({d:today, kg});
+  store.set("w:"+ex, log.slice(-30));
+  const el = document.getElementById("wkg"); if(el) el.textContent = kg;
+}
+function fmtDay(d){ const [y,m,dd]=d.split("-").map(Number); return new Date(y,m-1,dd).toLocaleDateString("en-IN",{day:"numeric",month:"short"}); }
 function isDone(day,sec,i,it){ const p=prog()[key(day,sec,i)]||[]; return p.filter(Boolean).length >= setsOf(it); }
 function restTxt(s){ return s>=60 ? (s%60 ? `${Math.floor(s/60)} min ${s%60} sec` : `${s/60} min`) : `${s} sec`; }
-function amount(it){ return it.sets ? `${it.sets} sets × ${esc(it.reps)}` : esc(it.time || it.reps || ""); }
+function amount(it){
+  if(!it.sets) return esc(it.time || it.reps || "");
+  return (it.warmupSets ? `${it.warmupSets} warm-up + ` : "") + `${it.sets} sets × ${esc(it.reps)}`; }
 function dayStats(day){
   const w=workoutFor(day); const all=items(w); if(!all.length) return {n:0,d:0,mins:0};
   let d=0; all.forEach(x=>{ if(isDone(day,x.sec,x.i,x.it)) d++; });
-  let secs=0; (w.main||[]).forEach(it=> secs += (it.sets||1)*(45+(it.rest||60)));
-  const mins = Math.round(secs/60) + ((w.warmup||[]).length?5:0) + ((w.cooldown||[]).length?5:0);
+  let secs=0; (w.main||[]).forEach(it=> secs += setsOf(it)*(45+(it.rest||60)));
+  (w.cooldown||[]).concat(w.warmup||[]).forEach(it=>{ const m = /^(\d+)\s*min/.exec(it.time||""); if(m) secs += m[1]*60; });
+  const mins = Math.round(secs/60/5)*5;
   return {n:all.length,d,mins};
 }
 
@@ -297,6 +350,11 @@ function renderHome(){
        ${st.d===0 ? `${I.play(22)} Start Workout` : st.d===st.n ? `${I.check(22,"#1F9D57")} All done today!` : `${I.play(22)} Continue (${st.d} of ${st.n} done)`}</button>` : ""}
   </div>`;
 
+  if((w.main||[]).length && P.howTo?.length){
+    html += `<details class="howto" ${store.get("howtoClosed",false)?"":"open"} ontoggle="store.set('howtoClosed',!this.open)">
+      <summary>${I.info()} How to train</summary><ol>${P.howTo.map(s=>`<li>${esc(s)}</li>`).join("")}</ol></details>`;
+  }
+
   ["warmup","main","cooldown"].forEach(sec=>{
     const list = w[sec]||[]; if(!list.length) return;
     html += `<h3 class="sec">${SEC[sec]} <span class="n">${list.length}</span></h3>`;
@@ -337,16 +395,22 @@ function renderEx(day, sec, i){
       <span class="pos"><small>${SEC[sec]}</small>${idx+1} of ${list.length}</span></div><div class="wrap">`;
   html += videoBlock(ex) + exHeader(ex);
   html += it.sets
-    ? `<div class="target"><div><small>Sets</small><strong>${it.sets}</strong></div>
+    ? `<div class="target ${it.warmupSets?"four":""}">
+        ${it.warmupSets ? `<div class="wu"><small>Warm-up</small><strong>${it.warmupSets}</strong></div>` : ""}
+        <div><small>Sets</small><strong>${it.sets}</strong></div>
         <div><small>Reps</small><strong>${esc(it.reps)}</strong></div>
         <div><small>Rest</small><strong>${it.rest ? it.rest+"s" : "–"}</strong></div></div>`
     : `<div class="target one"><div><small>How much</small><strong>${amount(it)}</strong></div></div>`;
+  if(ex.feel) html += `<div class="card feel"><h4>${I.target()} Feel it here</h4>${esc(ex.feel)}</div>`;
   if(it.note) html += `<div class="card tip"><h4>${I.star()} Note</h4>${esc(it.note)}</div>`;
   if(isToday){
-    html += `<div class="card"><h4>${it.sets ? "Tap after each set" : "Tap when done"}</h4><div class="sets">` +
-      Array.from({length:n},(_,s)=>`<button class="setb ${p[s]?"done":""}" onclick="tickSet('${k}',${s},${n},${it.rest||0},'${day}','${sec}',${i})">
-        ${p[s] ? I.check(18) : ""}${it.sets ? "Set "+(s+1) : "Done"}</button>`).join("") + `</div></div>`;
+    html += `<div class="card"><h4>${it.sets ? "Tap after each set" : "Tap when done"}</h4>
+      ${it.warmupSets ? `<p class="hint">Warm-up set = light weight, easy. Then 3 sets with your working weight.</p>` : ""}
+      <div class="sets ${n<=4?"grid":""}" style="--n:${n}">` +
+      Array.from({length:n},(_,s)=>`<button class="setb ${s<(it.warmupSets||0)?"wu":""} ${p[s]?"done":""}" onclick="tickSet('${k}',${s},${n},${it.rest||0},'${day}','${sec}',${i})">
+        ${p[s] ? I.check(18) : ""}${setLabel(it,s)}</button>`).join("") + `</div></div>`;
   }
+  if(it.sets) html += weightCard(it.ex);
   html += exBody(ex) + `</div></div>`;
   html += `<div class="foot"><div class="in">
     ${prev ? `<button onclick="go('ex/${day}/${prev.sec}/${prev.i}')">${I.back()} Back</button>` : `<button onclick="go('day/${day}')">${I.back()} Plan</button>`}
@@ -364,12 +428,16 @@ function tickSet(k, s, n, rest, day, sec, i){
   renderEx(day, sec, +i);
   if(justDone && rest){
     const list=items(workoutFor(day)), idx=list.findIndex(x=>x.sec===sec && x.i===+i);
+    const it = list[idx].it;
     const doneCount = arr.filter(Boolean).length;
     const allDone = doneCount >= n;
     const nextEx = allDone ? list[idx+1] : null;
+    const nextSet = arr.findIndex((v,j)=>j<n && !v) >= 0 ? arr.findIndex((v,j)=>j<n && !v) : doneCount;
     const nextTxt = allDone ? (nextEx ? "Next: " + P.exercises[nextEx.it.ex].name : "That was the last one!")
-                            : `Next: Set ${doneCount+1} of ${n}`;
-    startTimer(rest, nextTxt, allDone && nextEx ? `ex/${day}/${nextEx.sec}/${nextEx.i}` : null);
+                            : `Next: ${setLabel(it, nextSet)}${s < (it.warmupSets||0) ? " — use your working weight" : ""}`;
+    // shorter rest after a light warm-up set
+    const r = s < (it.warmupSets||0) ? Math.min(rest, 60) : rest;
+    startTimer(r, nextTxt, allDone && nextEx ? `ex/${day}/${nextEx.sec}/${nextEx.i}` : null);
   }
 }
 function finish(day){ go("day/"+day); setTimeout(()=>toast("Great job! Workout complete"), 50); }
@@ -411,7 +479,31 @@ function videoBlock(ex){
      target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=${encodeURIComponent(ex.name+" proper form")}">Watch on YouTube</a>`;
   return `<div class="video" style="background-image:url('https://i.ytimg.com/vi/${id}/hqdefault.jpg')" onclick="playVid(this,'${id}')">
     <div class="play"><b>${I.play(34)}</b></div><div class="cap">Watch how to do it</div></div>
-    <a class="ytlink" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">Open in YouTube ${I.ext()}</a>`;
+    <div class="vlinks">${ex.altVideo && ytId(ex.altVideo.url) ? `<button class="alt" onclick="swapVid(this,'${ytId(ex.altVideo.url)}','${id}')"
+        data-l1="${esc(ex.altVideo.label)}">${I.play(14,"currentColor")} <span>${esc(ex.altVideo.label)}</span></button>` : "<span></span>"}
+    <a class="ytlink" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">Open in YouTube ${I.ext()}</a></div>`;
+}
+// switch between the main video and the alternate version
+function swapVid(btn, altId, mainId){
+  const v = btn.closest(".vlinks").previousElementSibling, link = btn.parentElement.querySelector(".ytlink");
+  const showingAlt = btn.dataset.alt === "1";
+  const id = showingAlt ? mainId : altId;
+  btn.dataset.alt = showingAlt ? "0" : "1";
+  btn.querySelector("span").textContent = showingAlt ? btn.dataset.l1 : "Back to main video";
+  link.href = "https://www.youtube.com/watch?v=" + id;
+  v.style.backgroundImage = `url('https://i.ytimg.com/vi/${id}/hqdefault.jpg')`;
+  v.innerHTML = `<div class="play"><b>${I.play(34)}</b></div><div class="cap">Watch how to do it</div>`;
+  v.onclick = () => playVid(v, id);
+}
+function weightCard(exId){
+  const w = weightInfo(exId);
+  const shown = w.today ?? (w.prev ? w.prev.kg : 0);
+  return `<div class="card weight"><h4>${I.dumb()} My weight (working sets)</h4>
+    <div class="stepper"><button onclick="setWeight('${exId}',-2.5)" aria-label="Less weight">−</button>
+      <div><strong id="wkg">${shown}</strong> <span>kg</span></div>
+      <button onclick="setWeight('${exId}',2.5)" aria-label="More weight">+</button></div>
+    <p class="hint">${w.prev ? `Last time: <b>${w.prev.kg} kg</b> on ${fmtDay(w.prev.d)}. If all 12 reps felt easy, add a little today.`
+      : "Tap + or − to save the weight you use. Next time you will see it here."}</p></div>`;
 }
 function playVid(el,id){
   el.onclick=null;
@@ -461,7 +553,8 @@ function renderLibEx(id){
   const ex = P.exercises[id]; if(!ex) return go("lib");
   document.getElementById("app").innerHTML = `<div class="screen" style="padding-bottom:30px"><div class="bar">
     <button class="back" onclick="go('lib')">${I.back()} Back</button></div>
-    <div class="wrap">${videoBlock(ex)}${exHeader(ex)}${exBody(ex)}</div></div>`;
+    <div class="wrap">${videoBlock(ex)}${exHeader(ex)}
+    ${ex.feel ? `<div class="card feel"><h4>${I.target()} Feel it here</h4>${esc(ex.feel)}</div>` : ""}${exBody(ex)}</div></div>`;
   window.scrollTo(0,0);
 }
 

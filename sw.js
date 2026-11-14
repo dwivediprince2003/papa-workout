@@ -1,5 +1,5 @@
 // Network-first: always try to get the latest plan/app, fall back to cache when offline.
-const C = "papa-workout-v2";
+const C = "papa-workout-v3";
 self.addEventListener("install", e => self.skipWaiting());
 self.addEventListener("activate", e => e.waitUntil(self.clients.claim()));
 self.addEventListener("fetch", e => {
