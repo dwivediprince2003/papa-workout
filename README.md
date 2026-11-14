@@ -1,5 +1,16 @@
 # Workout Plan — App guide
 
+- **Live app:** https://dwivediprince2003.github.io/papa-workout/
+- **Android APK (hamesha latest):** https://github.com/dwivediprince2003/papa-workout/releases/download/apk/Workout.apk
+
+## Update kaise karein
+1. `plan.json` edit karo (ya Claude ko bolo).
+2. `git add -A && git commit -m "Update plan" && git push`
+3. 1–2 minute me GitHub Pages update ho jata hai. Papa ka app agli baar khulne pe naya plan dikhayega. **APK dobara install nahi karni.**
+
+Nayi APK sirf tab banti hai jab `android/` folder badle (app ka naam/icon). Wo GitHub Actions apne aap banata hai aur upar wale same link pe daal deta hai.
+APK signing key: `~/.papa-workout-keys/` (Mac pe). **Isse delete mat karna** — iske bina future APK purani app ke upar install nahi hogi.
+
 Simple mobile web-app (PWA). Phone pe link kholo → "Add to Home Screen" → normal app jaisa icon ban jata hai.
 Koi App Store / Play Store nahi chahiye. App ki language: simple English.
 
