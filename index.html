@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Workout Plan</title>
+<title>Workout Companion</title>
 <meta name="theme-color" content="#F4F5F8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -215,7 +215,19 @@ details.acc[open] summary .chev{transform:rotate(90deg)}
 .sheet .tipline b{width:28px;height:28px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-size:14px;flex:none}
 .sheet .close{width:100%;margin-top:14px;padding:16px;border-radius:16px;background:var(--accent);color:var(--onaccent);font-weight:800;font-size:18px}
 
+/* alternatives */
+.wcard.alt{width:150px}
+.wcard.alt .th{height:110px}
+.wcard .nm small{display:block;margin-top:3px;font-size:12px;font-weight:600;color:var(--faint)}
+
 /* library */
+.gchips{display:flex;gap:8px;overflow-x:auto;margin:14px -16px 0;padding:2px 16px 4px;scrollbar-width:none}
+.gchips::-webkit-scrollbar{display:none}
+.gchips button{flex:none;padding:10px 16px;border-radius:999px;background:var(--card);box-shadow:var(--shadow);font-size:15px;font-weight:700;color:var(--muted)}
+.gchips button.on{background:var(--accent);color:var(--onaccent)}
+.ghead{margin:30px 2px 0;font-size:26px;font-weight:800;letter-spacing:-.5px}
+.lib .sec{margin-top:18px}
+.badge{display:inline-block;margin-top:6px;font-size:12px;font-weight:700;color:var(--ok);background:var(--okbg);padding:3px 8px;border-radius:999px}
 .search{display:flex;align-items:center;gap:10px;background:var(--card);border-radius:16px;padding:0 14px;margin:16px 0 0;box-shadow:var(--shadow)}
 .search input{flex:1;font:inherit;border:0;outline:0;background:none;color:var(--ink);padding:15px 0}
 .search svg{color:var(--faint)}
@@ -503,6 +515,7 @@ function renderStep(day, n){
       ${ex.mistakes?.length ? `<div class="avoid"><b>Avoid</b>${ex.mistakes.map(x=>`<div>✕ ${esc(x)}</div>`).join("")}</div>` : ""}
       ${ex.tip ? `<p class="tip">💡 ${esc(ex.tip)}</p>` : ""}</details>`;
   }
+  h += altBlock(it.ex);
   h += `</div></div>`;
 
   // one big action button
@@ -637,21 +650,48 @@ function swapVid(btn){
   v.innerHTML = `<div class="play"><b>${I.play(30)}</b></div>`; v.onclick = () => playVid(v,id);
 }
 
+/* ================= ALTERNATIVES ================= */
+// exercises in any workout of the plan
+function planIds(){ const s=new Set(); Object.values(P.workouts).forEach(w=>items(w).forEach(x=>s.add(x.it.ex))); return s; }
+function items(w){ const o=[]; ["warmup","main","cooldown"].forEach(s=>(w[s]||[]).forEach((it,i)=>o.push({sec:s,i,it}))); return o; }
+// listed alternatives, or else other exercises for the same muscle
+function altsFor(id){
+  const ex = P.exercises[id]; if(!ex || ex.group==="Warm-up") return {list:[], own:false};
+  if(ex.alts?.length) return {list: ex.alts.filter(a=>P.exercises[a]), own:true};
+  return {list: Object.keys(P.exercises).filter(k=>k!==id && ex.sub && P.exercises[k].sub===ex.sub).slice(0,4), own:false};
+}
+function altBlock(id){
+  const {list, own} = altsFor(id); if(!list.length) return "";
+  return `<div class="sec"><h3>${own ? "Machine busy? Do one of these" : "Other options, same muscle"}</h3></div>
+    <div class="hscroll">${list.map(a=>{ const ex=P.exercises[a];
+      return `<button class="wcard alt" onclick="buzz();go('lib/${a}')"><div class="th" style="background-image:url('${thumb(ex)}')"></div>
+        <div class="nm">${esc(ex.name)}<small>${esc(ex.equipment && ex.equipment!=="None" ? ex.equipment : ex.part)}</small></div></button>`; }).join("")}</div>`;
+}
+
 /* ================= LIBRARY ================= */
+let libGroup = "All";
 function renderLib(q=""){
-  const groups = {};
-  Object.keys(P.exercises).forEach(id=>{ const ex=P.exercises[id];
-    if(q && ![ex.name,ex.part,ex.group].join(" ").toLowerCase().includes(q.toLowerCase())) return;
-    (groups[ex.group||"Other"] ||= []).push(id); });
-  let h = `<div class="wrap lib"><div class="hd"><div><div class="date">${Object.keys(P.exercises).length} exercises</div><h1>Exercises</h1></div></div>
-    <label class="search">${I.search()}<input id="q" placeholder="Search" value="${esc(q)}" oninput="libSearch(this.value)"></label>`;
-  if(!Object.keys(groups).length) h += `<div class="empty">Nothing found</div>`;
-  Object.entries(groups).forEach(([g,ids])=>{
-    h += `<div class="sec"><h3>${esc(g)}</h3><small>${ids.length}</small></div>` + ids.map(id=>{ const ex=P.exercises[id];
-      return `<button class="row" onclick="go('lib/${id}')"><div class="th" style="background-image:url('${thumb(ex)}')"></div>
-        <div class="bd"><div class="nm">${esc(ex.name)}</div><div class="sub">${esc(ex.part)}</div></div><span class="go">${I.next()}</span></button>`; }).join("");
+  const inPlan = planIds(), all = Object.keys(P.exercises);
+  const groupsOrder = [...new Set(all.map(id=>P.exercises[id].group||"Other"))];
+  const ids = all.filter(id=>{ const ex=P.exercises[id];
+    if(q) return [ex.name,ex.part,ex.group,ex.sub,ex.equipment].join(" ").toLowerCase().includes(q.toLowerCase());
+    return libGroup==="All" || (ex.group||"Other")===libGroup; });
+  let h = `<div class="wrap lib"><div class="hd"><div><div class="date">${all.length} exercises</div><h1>Exercises</h1></div></div>
+    <label class="search">${I.search()}<input id="q" placeholder="Search (chest, cable, dumbbell…)" value="${esc(q)}" oninput="libSearch(this.value)"></label>
+    ${q ? "" : `<div class="gchips">${["All",...groupsOrder].map(g=>`<button class="${g===libGroup?"on":""}" onclick="buzz();libGroup='${g}';renderLib()">${esc(g)}</button>`).join("")}</div>`}`;
+  if(!ids.length) h += `<div class="empty">Nothing found</div>`;
+  // headings: group (when showing all) and sub-group
+  let lastG = null, lastS = null;
+  ids.forEach(id=>{ const ex=P.exercises[id], g=ex.group||"Other", s=ex.sub||g;
+    if(g!==lastG && (libGroup==="All"||q)){ h += `<div class="ghead">${esc(g)}</div>`; lastS=null; }
+    if(s!==lastS && s!==g){ h += `<div class="sec"><h3>${esc(s)}</h3></div>`; }
+    lastG=g; lastS=s;
+    h += `<button class="row" onclick="go('lib/${id}')"><div class="th" style="background-image:url('${thumb(ex)}')"></div>
+      <div class="bd"><div class="nm">${esc(ex.name)}</div><div class="sub">${esc(ex.equipment && ex.equipment!=="None" ? ex.equipment : ex.part)}</div>
+      ${inPlan.has(id) ? `<span class="badge">In your plan</span>` : ""}</div><span class="go">${I.next()}</span></button>`;
   });
   $app().innerHTML = h + `</div>` + tabs("lib");
+  window.scrollTo(0,0);
 }
 function libSearch(v){ renderLib(v); const q=document.getElementById("q"); q.focus(); q.setSelectionRange(v.length,v.length); }
 function renderLibEx(id){
@@ -663,7 +703,8 @@ function renderLibEx(id){
     ${ex.steps?.length ? `<details class="acc" open><summary>${I.book()} How to do it <span class="chev">${I.next()}</span></summary>
       <ol class="steps">${ex.steps.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>
       ${ex.mistakes?.length ? `<div class="avoid"><b>Avoid</b>${ex.mistakes.map(x=>`<div>✕ ${esc(x)}</div>`).join("")}</div>` : ""}
-      ${ex.tip ? `<p class="tip">💡 ${esc(ex.tip)}</p>` : ""}</details>` : ""}</div></div>`;
+      ${ex.tip ? `<p class="tip">💡 ${esc(ex.tip)}</p>` : ""}</details>` : ""}
+    ${altBlock(id)}</div></div>`;
   window.scrollTo(0,0);
 }
 

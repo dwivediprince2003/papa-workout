@@ -1,8 +1,8 @@
 // App files (page, plan): network-first so updates show up, cache fallback when offline.
 // Exercise demos (demos/*.webp, and older remote GIFs): cache-first — they never change,
 // so once seen they load instantly and work offline.
-const C = "papa-workout-v6";
-const DEMOS = "papa-workout-demos-v2";
+const C = "workout-companion-v7";
+const DEMOS = "workout-companion-demos-v3";
 self.addEventListener("install", e => self.skipWaiting());
 self.addEventListener("activate", e => e.waitUntil(
   caches.keys().then(keys => Promise.all(keys.filter(k => k !== C && k !== DEMOS).map(k => caches.delete(k))))

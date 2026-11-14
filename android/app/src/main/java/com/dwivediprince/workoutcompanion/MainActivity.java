@@ -1,4 +1,4 @@
-package com.papa.workout;
+package com.dwivediprince.workoutcompanion;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;

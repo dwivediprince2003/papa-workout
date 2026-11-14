@@ -1,81 +1,79 @@
-# Workout Plan — App guide
+# Workout Companion
 
-- **Live app:** https://dwivediprince2003.github.io/papa-workout/
-- **Android APK (hamesha latest):** https://github.com/dwivediprince2003/papa-workout/releases/download/apk/Workout.apk
+A guided gym-workout app for beginners. It runs as a Progressive Web App and ships as a lightweight Android app. The plan, exercises and content live in a single JSON file, so updates reach the phone without reinstalling anything.
 
-## Update kaise karein
-1. `plan.json` edit karo (ya Claude ko bolo).
-2. `git add -A && git commit -m "Update plan" && git push`
-3. 1–2 minute me GitHub Pages update ho jata hai. Papa ka app agli baar khulne pe naya plan dikhayega. **APK dobara install nahi karni.**
+- **Web app:** https://dwivediprince2003.github.io/workout-companion/
+- **Android APK (latest build):** https://github.com/dwivediprince2003/workout-companion/releases/download/apk/WorkoutCompanion.apk
 
-Nayi APK sirf tab banti hai jab `android/` folder badle (app ka naam/icon). Wo GitHub Actions apne aap banata hai aur upar wale same link pe daal deta hai.
-APK signing key: `~/.papa-workout-keys/` (Mac pe). **Isse delete mat karna** — iske bina future APK purani app ke upar install nahi hogi.
+## Features
 
-Simple mobile web-app (PWA). Phone pe link kholo → "Add to Home Screen" → normal app jaisa icon ban jata hai.
-Koi App Store / Play Store nahi chahiye. App ki language: simple English.
+- **Guided sessions:** warm-up → each exercise → finisher → summary. One large action button per step ("Set 1 done"), with an automatic rest timer, sound and vibration.
+- **Short looping demos** for every exercise, with the working muscles highlighted. A full-length video link is kept as a fallback.
+- **Alternatives:** every main exercise lists two or three substitutes ("Machine busy? Do one of these").
+- **Exercise library** grouped by muscle (Chest → Middle / Upper / Fly, Back → Lats / Middle / Traps, …), with search and "In your plan" badges.
+- **Progress:** warm-up and working sets tracked per day, plus a per-exercise weight log ("Last time: 20 kg") for progressive overload.
+- **Schedule engine:** a repeating split (Push → Back → Arms → Legs) that skips rest days, or a fixed weekday plan.
+- **Offline-first:** a service worker caches the app and demos; the plan refreshes in the background whenever the app opens.
+- **Large type and big touch targets**, a light/dark theme, and minimal text.
 
-## Files
+## How it works
 
-| File | Kya hai |
-|---|---|
-| `plan.json` | **Sirf yahi file edit karni hai.** Saara plan, exercises, videos isme hain. |
-| `index.html` | App ka code (chhedne ki zaroorat nahi) |
-| `manifest.json`, `sw.js`, `icon-*.png` | Phone pe install + offline ke liye |
-
-## Plan kaise badlein (`plan.json`)
-
-### Top
-```json
-"greeting": "Hello Papa",
-"name": "Papa",
-"howTo": ["...", "..."]
 ```
-`howTo` = home screen ke (i) button me dikhne wale tips. `name` = workout khatam hone pe "Great job, Papa!".
+plan.json  ──►  index.html (vanilla JS, no build step)  ──►  GitHub Pages
+                         ▲
+Android app (WebView) ───┘  loads the hosted app, so content updates need no new APK
+```
 
-### 1. Kaunse din kya karna hai — `cycle`
+| Path | Purpose |
+|---|---|
+| `plan.json` | Schedule, workouts, exercises, alternatives and copy. The only file you edit day to day. |
+| `index.html` | The whole UI: home, guided session, rest timer, library. |
+| `sw.js` | Offline cache (network-first for app/plan, cache-first for demos). |
+| `demos/` | Exercise demos: 600 px animated WebP plus 240 px thumbnails. |
+| `android/` | Minimal WebView shell (full screen, back button, full-screen video, external links). |
+| `.github/workflows/apk.yml` | Builds and signs the APK and publishes it as the `apk` release when `android/` changes. |
+
+## Editing the plan (`plan.json`)
+
+**Schedule**
+
 ```json
 "cycle": { "start": "2026-11-14", "order": ["push", "back", "arms", "legs"], "restDays": ["sun"] }
 ```
-`start` wale din `order` ka pehla workout hota hai, phir order repeat hota hai. `restDays` wale din (yahan Sunday) rest hota hai aur cycle aage nahi badhta.
-Fixed weekday plan chahiye to `cycle` hata ke `"week": { "mon": "push", ... }` likh do.
 
-### 2. Workout — `workouts`
-```json
-"push": { "name": "Push Day", "focus": "Chest, Shoulders, Triceps", "color": "#D9532B",
-          "warmup": [...], "main": [...], "cooldown": [...] }
-```
-Har exercise line:
-```json
-{ "ex": "lat_pulldown", "sets": 3, "reps": "12", "rest": 90, "note": "Use light weight" }
-```
-- `ex` = exercise ki id (neeche `exercises` se)
-- `sets` · `reps` (text bhi chalega: `"10 each arm"`) · `rest` = aaram **seconds** me (timer isi se chalta hai)
-- `note` (optional) = papa ke liye special message
-- Warm-up/cool-down me `sets` ki jagah `"time": "3 min"` ya `"reps": "15"` likh sakte ho
+The first workout in `order` falls on `start`, and the order repeats from there. Rest days do not advance the cycle. To use a fixed weekday plan instead, replace `cycle` with `"week": { "mon": "push", … }`.
 
-### 3. Exercise — `exercises`
+**A workout line**
+
+```json
+{ "ex": "lat_pulldown", "warmupSets": 1, "sets": 3, "reps": "12", "rest": 90 }
+```
+
+`rest` is in seconds and drives the timer. For time-based items, use `"time": "20 min"` instead of sets and reps.
+
+**An exercise**
+
 ```json
 "lat_pulldown": {
   "name": "Lat Pulldown",
-  "about": "Pull the bar down to your chest",
-  "group": "Back",                 // "All Exercises" me isi group me dikhega
-  "part": "Back (Lats), Biceps",   // "Works on"
+  "group": "Back", "sub": "Lats (back width)",
+  "part": "Back (Lats), Biceps",
+  "feel": "Sides of your back, under your arms.",
   "equipment": "Lat pulldown machine",
-  "demo": "https://static.exercisedb.dev/media/....gif",   // short looping illustration (main demo)
-  "video": "https://www.youtube.com/watch?v=SALxEARiMkw",  // "Full video" link
-  "steps": ["...", "..."],
-  "mistakes": ["..."],
-  "tip": "..."                     // optional
+  "demo": "demos/lat_pulldown.webp", "thumb": "demos/lat_pulldown_t.webp",
+  "video": "https://www.youtube.com/watch?v=…",
+  "alts": ["vbar_pulldown", "reverse_grip_pulldown"],
+  "steps": ["…"], "mistakes": ["…"], "tip": "…"
 }
 ```
-`demo` = chhota animated illustration (ExerciseDB). `video` = YouTube ka poora video (optional, "Full video" link). Warm-up exercises me sirf `ex` likhna hai — papa khud choose karte hain.
 
-## Update papa ke phone tak kaise pahunchta hai
-App har baar khulne pe `plan.json` naya fetch karta hai. File update karke publish karo → papa jab app kholenge,
-naya plan aa jayega aur green message dikhega **"✓ Your plan was updated"**. Internet na ho to last saved plan dikhta hai.
+**Publishing:** commit and push. GitHub Pages updates within about a minute, and the app picks up the change the next time it opens.
 
-## Local preview
-```bash
-python3 -m http.server 8765
-```
-phir browser me `http://localhost:8765`.
+## Android build
+
+The workflow signs the APK with a key stored as repository secrets (`KEYSTORE_B64`, `KEYSTORE_PASSWORD`). Keep the original keystore backed up, because updates must be signed with the same key. A new APK is only needed when the Android shell itself changes (name, icon, package).
+
+## Credits
+
+- Exercise illustrations: [ExerciseDB](https://exercisedb.dev/) (upscaled with waifu2x).
+- Full-length technique videos: linked from YouTube creators.

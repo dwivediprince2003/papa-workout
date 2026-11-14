@@ -33,7 +33,7 @@ jobs:
         run: |
           # Use the real Pages address (handles custom domains); force https
           URL=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .html_url | sed 's#^http://#https://#')
-          sed -i "s#https://example.github.io/papa-workout/#${URL}#" android/app/src/main/res/values/strings.xml
+          sed -i "s#https://example.github.io/workout-companion/#${URL}#" android/app/src/main/res/values/strings.xml
           echo "App URL: $URL"
 
       - name: Restore signing key
@@ -52,7 +52,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          cp android/app/build/outputs/apk/release/app-release.apk Workout.apk
+          cp android/app/build/outputs/apk/release/app-release.apk WorkoutCompanion.apk
           gh release delete apk --yes --cleanup-tag || true
-          gh release create apk Workout.apk --title "Workout App (Android)" \
-            --notes "Download Workout.apk and install it on the phone. Plan updates come automatically — no need to reinstall."
+          gh release create apk WorkoutCompanion.apk --title "Workout Companion (Android)" \
+            --notes "Install WorkoutCompanion.apk on Android. Plan and content updates load automatically from the web app — no reinstall needed."

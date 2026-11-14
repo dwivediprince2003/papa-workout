@@ -1,16 +1,16 @@
 plugins { id 'com.android.application' }
 
 android {
-    namespace 'com.papa.workout'
+    namespace 'com.dwivediprince.workoutcompanion'
     compileSdk 34
 
     defaultConfig {
-        applicationId 'com.papa.workout'
+        applicationId 'com.dwivediprince.workoutcompanion'
         minSdk 24
         targetSdk 34
         // Bumped automatically by the cloud build (run number)
         versionCode((System.getenv('VERSION_CODE') ?: '1') as int)
-        versionName '1.0'
+        versionName '2.0'
     }
 
     signingConfigs {

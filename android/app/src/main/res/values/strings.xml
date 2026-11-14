@@ -2,5 +2,5 @@
 <resources>
     <string name="app_name">Workout</string>
     <!-- Replaced with the real GitHub Pages address by the cloud build -->
-    <string name="app_url">https://example.github.io/papa-workout/</string>
+    <string name="app_url">https://example.github.io/workout-companion/</string>
 </resources>

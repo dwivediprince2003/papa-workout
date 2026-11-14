@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-14f",
+  "version": "2026-11-14g",
   "title": "Workout Plan",
   "greeting": "Hello Papa",
   "name": "Papa",
@@ -428,14 +428,19 @@
     },
     "chest_press_machine": {
       "name": "Chest Press Machine",
-      "about": "Sit and push the handles forward",
       "group": "Chest",
+      "sub": "Middle Chest",
       "part": "Chest, Front shoulders, Triceps",
       "feel": "Middle of your chest. Not your shoulders.",
       "equipment": "Chest press machine",
       "demo": "demos/chest_press_machine.webp",
       "thumb": "demos/chest_press_machine_t.webp",
       "video": "https://www.youtube.com/watch?v=P8Hx90LdGH4",
+      "alts": [
+        "db_bench_press",
+        "incline_pushup",
+        "incline_db_press"
+      ],
       "steps": [
         "Set the seat so the handles are at mid-chest.",
         "Back flat on the pad. Feet on the floor.",
@@ -447,18 +452,126 @@
         "Letting the weight drop fast",
         "Shoulders rolling forward"
       ],
-      "tip": "Squeeze your chest at the front for 1 second."
+      "tip": "Squeeze your chest at the front for 1 second.",
+      "about": "Sit and push the handles forward"
+    },
+    "db_bench_press": {
+      "name": "Dumbbell Bench Press",
+      "group": "Chest",
+      "sub": "Middle Chest",
+      "part": "Chest, Front shoulders, Triceps",
+      "feel": "Middle of your chest.",
+      "equipment": "Dumbbells, Flat bench",
+      "demo": "demos/db_bench_press.webp",
+      "thumb": "demos/db_bench_press_t.webp",
+      "steps": [
+        "Lie on a flat bench, a dumbbell in each hand at chest level.",
+        "Feet flat on the floor.",
+        "Push the dumbbells up until arms are straight.",
+        "Slowly lower them back to your chest."
+      ],
+      "mistakes": [
+        "Dumbbells too heavy",
+        "Bouncing at the bottom"
+      ],
+      "tip": "Ask someone to hand you the dumbbells if they are heavy."
+    },
+    "incline_pushup": {
+      "name": "Incline Push-up",
+      "group": "Chest",
+      "sub": "Middle Chest",
+      "part": "Chest, Triceps",
+      "feel": "Chest and back of arms.",
+      "equipment": "Bench or step",
+      "demo": "demos/incline_pushup.webp",
+      "thumb": "demos/incline_pushup_t.webp",
+      "steps": [
+        "Hands on a bench, a little wider than shoulders.",
+        "Walk your feet back. Body straight.",
+        "Lower your chest to the bench.",
+        "Push back up."
+      ],
+      "mistakes": [
+        "Hips sagging",
+        "Elbows flaring wide"
+      ],
+      "tip": "Higher bench = easier."
+    },
+    "incline_db_press": {
+      "name": "Incline Dumbbell Press",
+      "group": "Chest",
+      "sub": "Upper Chest",
+      "part": "Upper chest, Shoulders",
+      "feel": "Top part of your chest, below the collarbone.",
+      "equipment": "Dumbbells, Incline bench",
+      "demo": "demos/incline_db_press.webp",
+      "thumb": "demos/incline_db_press_t.webp",
+      "steps": [
+        "Set the bench at a small angle (about 30°).",
+        "Dumbbells at your upper chest.",
+        "Push them up and a little together.",
+        "Slowly lower back down."
+      ],
+      "mistakes": [
+        "Bench too upright",
+        "Arching the back"
+      ]
+    },
+    "smith_incline_press": {
+      "name": "Smith Machine Incline Press",
+      "group": "Chest",
+      "sub": "Upper Chest",
+      "part": "Upper chest, Shoulders",
+      "feel": "Top part of your chest.",
+      "equipment": "Smith machine, Incline bench",
+      "demo": "demos/smith_incline_press.webp",
+      "thumb": "demos/smith_incline_press_t.webp",
+      "steps": [
+        "Put an incline bench under the Smith bar.",
+        "Unhook the bar. Lower it to your upper chest.",
+        "Push it back up.",
+        "Hook the bar back when done."
+      ],
+      "mistakes": [
+        "Bar landing on the neck",
+        "Forgetting the safety stops"
+      ],
+      "tip": "Set the safety stops just above your chest."
+    },
+    "cable_low_fly": {
+      "name": "Low-to-High Cable Fly",
+      "group": "Chest",
+      "sub": "Upper Chest",
+      "part": "Upper chest",
+      "feel": "Top part of your chest.",
+      "equipment": "Cable machine",
+      "demo": "demos/cable_low_fly.webp",
+      "thumb": "demos/cable_low_fly_t.webp",
+      "steps": [
+        "Set both cables low. Hold one handle in each hand.",
+        "Step forward. Arms down and a little out.",
+        "Bring your hands up and together in front of your face.",
+        "Slowly go back."
+      ],
+      "mistakes": [
+        "Bending the elbows too much",
+        "Using heavy weight"
+      ]
     },
     "pec_deck": {
       "name": "Pec Deck",
-      "about": "Bring the arms together in front of you",
       "group": "Chest",
+      "sub": "Chest Fly",
       "part": "Chest",
       "feel": "Inside of your chest, near the middle.",
       "equipment": "Pec deck (fly) machine",
       "demo": "demos/pec_deck.webp",
       "thumb": "demos/pec_deck_t.webp",
       "video": "https://www.youtube.com/watch?v=3jYo5cMU3d4",
+      "alts": [
+        "cable_fly",
+        "cable_low_fly"
+      ],
       "steps": [
         "Set the seat so the handles are at chest height.",
         "Sit with your back on the pad. Elbows a little bent.",
@@ -469,18 +582,44 @@
         "Opening the arms too far back",
         "Using arms instead of chest",
         "Going too fast"
-      ]
+      ],
+      "about": "Bring the arms together in front of you"
+    },
+    "cable_fly": {
+      "name": "Cable Fly",
+      "group": "Chest",
+      "sub": "Chest Fly",
+      "part": "Chest",
+      "feel": "Inside of your chest, near the middle.",
+      "equipment": "Cable machine",
+      "demo": "demos/cable_fly.webp",
+      "thumb": "demos/cable_fly_t.webp",
+      "steps": [
+        "Set both cables at shoulder height. Hold one handle in each hand.",
+        "Step forward. Arms open wide, elbows a little bent.",
+        "Bring your hands together in front of your chest.",
+        "Squeeze 1 second. Slowly open."
+      ],
+      "mistakes": [
+        "Arms going too far back",
+        "Pulling with the arms, not the chest"
+      ],
+      "tip": "Same move as the pec deck, just with cables."
     },
     "machine_shoulder_press": {
       "name": "Machine Shoulder Press",
-      "about": "Sit and push the handles above your head",
       "group": "Shoulders",
+      "sub": "Shoulder Press",
       "part": "Shoulders, Triceps",
       "feel": "Top and front of your shoulders.",
       "equipment": "Shoulder press machine",
       "demo": "demos/machine_shoulder_press.webp",
       "thumb": "demos/machine_shoulder_press_t.webp",
       "video": "https://www.youtube.com/watch?v=BAZkFGeUy5U",
+      "alts": [
+        "db_shoulder_press",
+        "smith_shoulder_press"
+      ],
       "steps": [
         "Set the seat so the handles are at shoulder height.",
         "Back flat on the pad. Feet on the floor.",
@@ -492,18 +631,63 @@
         "Weight too heavy",
         "Pushing your head forward"
       ],
-      "tip": "If there is no machine, do the same with dumbbells, sitting on a bench with back support."
+      "tip": "If there is no machine, do the same with dumbbells, sitting on a bench with back support.",
+      "about": "Sit and push the handles above your head"
+    },
+    "db_shoulder_press": {
+      "name": "Seated Dumbbell Shoulder Press",
+      "group": "Shoulders",
+      "sub": "Shoulder Press",
+      "part": "Shoulders, Triceps",
+      "feel": "Top and front of your shoulders.",
+      "equipment": "Dumbbells, Bench with back support",
+      "demo": "demos/db_shoulder_press.webp",
+      "thumb": "demos/db_shoulder_press_t.webp",
+      "steps": [
+        "Sit on an upright bench, back on the pad.",
+        "Dumbbells next to your ears, palms forward.",
+        "Push them up over your head.",
+        "Slowly bring them back to ear level."
+      ],
+      "mistakes": [
+        "Arching the lower back",
+        "Too heavy"
+      ]
+    },
+    "smith_shoulder_press": {
+      "name": "Smith Machine Shoulder Press",
+      "group": "Shoulders",
+      "sub": "Shoulder Press",
+      "part": "Shoulders, Triceps",
+      "feel": "Top and front of your shoulders.",
+      "equipment": "Smith machine, Upright bench",
+      "demo": "demos/smith_shoulder_press.webp",
+      "thumb": "demos/smith_shoulder_press_t.webp",
+      "steps": [
+        "Put an upright bench under the Smith bar.",
+        "Unhook the bar at chin height.",
+        "Push it up over your head.",
+        "Slowly lower to chin height."
+      ],
+      "mistakes": [
+        "Bar touching the head",
+        "Arching the back"
+      ]
     },
     "lateral_raise": {
       "name": "Lateral Raise",
-      "about": "Lift dumbbells out to the side",
       "group": "Shoulders",
+      "sub": "Side Shoulders",
       "part": "Side of shoulders",
       "feel": "Side of your shoulders. Not your neck.",
       "equipment": "Light dumbbells",
       "demo": "demos/lateral_raise.webp",
       "thumb": "demos/lateral_raise_t.webp",
       "video": "https://www.youtube.com/watch?v=pgrWjBfaFe8",
+      "alts": [
+        "cable_lateral_raise",
+        "machine_lateral_raise"
+      ],
       "steps": [
         "Stand with a light dumbbell in each hand.",
         "Keep elbows a little bent.",
@@ -515,62 +699,63 @@
         "Going above the shoulders",
         "Shrugging up"
       ],
-      "tip": "This works best with very light weight."
+      "tip": "This works best with very light weight.",
+      "about": "Lift dumbbells out to the side"
     },
-    "lat_pulldown": {
-      "name": "Lat Pulldown",
-      "about": "Pull the bar down to your chest",
-      "group": "Back",
-      "part": "Back (Lats), Biceps",
-      "feel": "Sides of your back, under your arms. Not only your arms.",
-      "equipment": "Lat pulldown machine",
-      "demo": "demos/lat_pulldown.webp",
-      "thumb": "demos/lat_pulldown_t.webp",
-      "video": "https://www.youtube.com/watch?v=SALxEARiMkw",
+    "cable_lateral_raise": {
+      "name": "Cable Lateral Raise",
+      "group": "Shoulders",
+      "sub": "Side Shoulders",
+      "part": "Side of shoulders",
+      "feel": "Side of your shoulder.",
+      "equipment": "Cable machine",
+      "demo": "demos/cable_lateral_raise.webp",
+      "thumb": "demos/cable_lateral_raise_t.webp",
       "steps": [
-        "Fix the thigh pad tight. Sit down.",
-        "Hold the bar a little wider than your shoulders.",
-        "Chest up. Pull the bar down to your upper chest.",
-        "Slowly let it go up until arms are straight."
+        "Set the cable low. Stand side-on, hold the handle with the far hand.",
+        "Lift your arm out to the side, up to shoulder height.",
+        "Slowly lower it.",
+        "Do all reps, then switch arms."
       ],
       "mistakes": [
-        "Pulling behind the neck",
-        "Leaning far back and jerking"
-      ],
-      "tip": "Think: pull with your elbows, not your hands."
+        "Swinging the body",
+        "Going above the shoulder"
+      ]
     },
-    "machine_row": {
-      "name": "Seated Machine Row",
-      "about": "Sit and pull the handles to your belly",
-      "group": "Back",
-      "part": "Middle back, Lats, Biceps",
-      "feel": "Middle of your back, between the shoulder blades.",
-      "equipment": "Seated row machine",
-      "demo": "demos/machine_row.webp",
-      "thumb": "demos/machine_row_t.webp",
-      "video": "https://www.youtube.com/watch?v=TeFo51Q_Nsc",
+    "machine_lateral_raise": {
+      "name": "Machine Lateral Raise",
+      "group": "Shoulders",
+      "sub": "Side Shoulders",
+      "part": "Side of shoulders",
+      "feel": "Side of your shoulders.",
+      "equipment": "Lateral raise machine",
+      "demo": "demos/machine_lateral_raise.webp",
+      "thumb": "demos/machine_lateral_raise_t.webp",
       "steps": [
-        "Set the seat so the handles are at chest height. Chest on the pad.",
-        "Hold the handles with straight arms.",
-        "Pull the handles back. Squeeze your shoulder blades together.",
-        "Slowly let your arms go forward."
+        "Sit with your arms on the pads.",
+        "Lift your arms out to the side, up to shoulder height.",
+        "Hold 1 second.",
+        "Slowly lower."
       ],
       "mistakes": [
-        "Chest coming off the pad",
-        "Jerking the weight",
-        "Shrugging up"
+        "Shrugging the shoulders up",
+        "Going too fast"
       ]
     },
     "reverse_pec_deck": {
       "name": "Reverse Pec Deck",
-      "about": "Open your arms back on the pec deck",
-      "group": "Back",
+      "group": "Shoulders",
+      "sub": "Rear Shoulders",
       "part": "Rear shoulders, Upper back",
       "feel": "Back of your shoulders and upper back.",
       "equipment": "Pec deck machine (facing the pad)",
       "demo": "demos/reverse_pec_deck.webp",
       "thumb": "demos/reverse_pec_deck_t.webp",
       "video": "https://www.youtube.com/watch?v=v0rJuhEa59c",
+      "alts": [
+        "db_rear_fly",
+        "cable_rear_fly"
+      ],
       "steps": [
         "Sit facing the machine. Chest on the pad.",
         "Hold the handles in front, arms almost straight.",
@@ -582,18 +767,219 @@
         "Bending the elbows a lot",
         "Moving too fast"
       ],
-      "tip": "Very good for posture. Keep the weight light."
+      "tip": "Very good for posture. Keep the weight light.",
+      "about": "Open your arms back on the pec deck"
+    },
+    "db_rear_fly": {
+      "name": "Dumbbell Rear Fly",
+      "group": "Shoulders",
+      "sub": "Rear Shoulders",
+      "part": "Rear shoulders, Upper back",
+      "feel": "Back of your shoulders.",
+      "equipment": "Light dumbbells, Bench",
+      "demo": "demos/db_rear_fly.webp",
+      "thumb": "demos/db_rear_fly_t.webp",
+      "steps": [
+        "Sit on the end of a bench and lean forward, chest near your knees.",
+        "Dumbbells hanging down, elbows a little bent.",
+        "Lift your arms out to the side.",
+        "Slowly lower."
+      ],
+      "mistakes": [
+        "Weight too heavy",
+        "Lifting with the back"
+      ]
+    },
+    "cable_rear_fly": {
+      "name": "Cable Rear Fly",
+      "group": "Shoulders",
+      "sub": "Rear Shoulders",
+      "part": "Rear shoulders, Upper back",
+      "feel": "Back of your shoulders.",
+      "equipment": "Cable machine",
+      "demo": "demos/cable_rear_fly.webp",
+      "thumb": "demos/cable_rear_fly_t.webp",
+      "steps": [
+        "Set both cables at chest height. Cross them: left hand holds the right cable.",
+        "Arms straight in front.",
+        "Pull your arms open and back.",
+        "Slowly return."
+      ],
+      "mistakes": [
+        "Bending the elbows a lot",
+        "Leaning back"
+      ]
+    },
+    "lat_pulldown": {
+      "name": "Lat Pulldown",
+      "group": "Back",
+      "sub": "Lats (back width)",
+      "part": "Back (Lats), Biceps",
+      "feel": "Sides of your back, under your arms. Not only your arms.",
+      "equipment": "Lat pulldown machine",
+      "demo": "demos/lat_pulldown.webp",
+      "thumb": "demos/lat_pulldown_t.webp",
+      "video": "https://www.youtube.com/watch?v=SALxEARiMkw",
+      "alts": [
+        "vbar_pulldown",
+        "reverse_grip_pulldown",
+        "straight_arm_pulldown"
+      ],
+      "steps": [
+        "Fix the thigh pad tight. Sit down.",
+        "Hold the bar a little wider than your shoulders.",
+        "Chest up. Pull the bar down to your upper chest.",
+        "Slowly let it go up until arms are straight."
+      ],
+      "mistakes": [
+        "Pulling behind the neck",
+        "Leaning far back and jerking"
+      ],
+      "tip": "Think: pull with your elbows, not your hands.",
+      "about": "Pull the bar down to your chest"
+    },
+    "vbar_pulldown": {
+      "name": "Close-Grip Pulldown",
+      "group": "Back",
+      "sub": "Lats (back width)",
+      "part": "Back (Lats), Biceps",
+      "feel": "Sides of your back, under your arms.",
+      "equipment": "Lat pulldown machine + V-bar",
+      "demo": "demos/vbar_pulldown.webp",
+      "thumb": "demos/vbar_pulldown_t.webp",
+      "steps": [
+        "Attach the V-bar. Sit with the thigh pad tight.",
+        "Hold the V-bar, chest up.",
+        "Pull it down to your upper chest.",
+        "Slowly let it go up."
+      ],
+      "mistakes": [
+        "Leaning far back",
+        "Jerking the weight"
+      ]
+    },
+    "reverse_grip_pulldown": {
+      "name": "Machine Pulldown",
+      "group": "Back",
+      "sub": "Lats (back width)",
+      "part": "Back (Lats), Biceps",
+      "feel": "Sides of your back.",
+      "equipment": "Pulldown machine",
+      "demo": "demos/reverse_grip_pulldown.webp",
+      "thumb": "demos/reverse_grip_pulldown_t.webp",
+      "steps": [
+        "Sit and hold the handles.",
+        "Chest up, shoulders down.",
+        "Pull the handles down to your chest.",
+        "Slowly let them go up."
+      ],
+      "mistakes": [
+        "Using arms only",
+        "Going too fast"
+      ]
+    },
+    "straight_arm_pulldown": {
+      "name": "Straight-Arm Pulldown",
+      "group": "Back",
+      "sub": "Lats (back width)",
+      "part": "Back (Lats)",
+      "feel": "Sides of your back.",
+      "equipment": "Cable machine + rope or bar",
+      "demo": "demos/straight_arm_pulldown.webp",
+      "thumb": "demos/straight_arm_pulldown_t.webp",
+      "steps": [
+        "Set the cable high. Hold the rope with straight arms.",
+        "Lean forward a little.",
+        "Pull the rope down to your thighs. Keep arms straight.",
+        "Slowly let it go up."
+      ],
+      "mistakes": [
+        "Bending the elbows",
+        "Using heavy weight"
+      ]
+    },
+    "machine_row": {
+      "name": "Seated Machine Row",
+      "group": "Back",
+      "sub": "Middle Back",
+      "part": "Middle back, Lats, Biceps",
+      "feel": "Middle of your back, between the shoulder blades.",
+      "equipment": "Seated row machine",
+      "demo": "demos/machine_row.webp",
+      "thumb": "demos/machine_row_t.webp",
+      "video": "https://www.youtube.com/watch?v=TeFo51Q_Nsc",
+      "alts": [
+        "cable_row",
+        "db_row"
+      ],
+      "steps": [
+        "Set the seat so the handles are at chest height. Chest on the pad.",
+        "Hold the handles with straight arms.",
+        "Pull the handles back. Squeeze your shoulder blades together.",
+        "Slowly let your arms go forward."
+      ],
+      "mistakes": [
+        "Chest coming off the pad",
+        "Jerking the weight",
+        "Shrugging up"
+      ],
+      "about": "Sit and pull the handles to your belly"
+    },
+    "cable_row": {
+      "name": "Seated Cable Row",
+      "group": "Back",
+      "sub": "Middle Back",
+      "part": "Middle back, Lats, Biceps",
+      "feel": "Middle of your back, between the shoulder blades.",
+      "equipment": "Cable row machine",
+      "demo": "demos/cable_row.webp",
+      "thumb": "demos/cable_row_t.webp",
+      "steps": [
+        "Sit with feet on the platform, knees a little bent.",
+        "Back straight, chest up.",
+        "Pull the handle to your belly.",
+        "Slowly let your arms go forward."
+      ],
+      "mistakes": [
+        "Rounding the back",
+        "Rocking the body"
+      ]
+    },
+    "db_row": {
+      "name": "Dumbbell Bent-Over Row",
+      "group": "Back",
+      "sub": "Middle Back",
+      "part": "Middle back, Lats",
+      "feel": "Middle of your back.",
+      "equipment": "Dumbbells",
+      "demo": "demos/db_row.webp",
+      "thumb": "demos/db_row_t.webp",
+      "steps": [
+        "Hold dumbbells. Bend forward from the hips, back flat.",
+        "Let your arms hang down.",
+        "Pull the dumbbells to your waist.",
+        "Slowly lower."
+      ],
+      "mistakes": [
+        "Rounding the back",
+        "Standing up during the move"
+      ],
+      "tip": "If your lower back is weak, do the seated cable row instead."
     },
     "db_shrug": {
       "name": "Dumbbell Shrug",
-      "about": "Lift your shoulders up to your ears",
       "group": "Back",
+      "sub": "Traps",
       "part": "Traps (top of shoulders, neck)",
       "feel": "Top of your shoulders, near the neck.",
       "equipment": "Dumbbells",
       "demo": "demos/db_shrug.webp",
       "thumb": "demos/db_shrug_t.webp",
       "video": "https://www.youtube.com/watch?v=cJRVVxmytaM",
+      "alts": [
+        "barbell_shrug",
+        "machine_shrug"
+      ],
       "steps": [
         "Stand straight with a dumbbell in each hand at your sides.",
         "Lift your shoulders straight up toward your ears.",
@@ -604,18 +990,63 @@
         "Rolling the shoulders in circles",
         "Bending the elbows",
         "Moving the head"
+      ],
+      "about": "Lift your shoulders up to your ears"
+    },
+    "barbell_shrug": {
+      "name": "Barbell Shrug",
+      "group": "Back",
+      "sub": "Traps",
+      "part": "Traps",
+      "feel": "Top of your shoulders, near the neck.",
+      "equipment": "Barbell",
+      "demo": "demos/barbell_shrug.webp",
+      "thumb": "demos/barbell_shrug_t.webp",
+      "steps": [
+        "Hold a barbell in front of your thighs.",
+        "Lift your shoulders up to your ears.",
+        "Hold 1 second.",
+        "Slowly lower."
+      ],
+      "mistakes": [
+        "Rolling the shoulders",
+        "Bending the elbows"
+      ]
+    },
+    "machine_shrug": {
+      "name": "Machine Shrug",
+      "group": "Back",
+      "sub": "Traps",
+      "part": "Traps",
+      "feel": "Top of your shoulders.",
+      "equipment": "Shrug machine",
+      "demo": "demos/machine_shrug.webp",
+      "thumb": "demos/machine_shrug_t.webp",
+      "steps": [
+        "Stand in the machine, hold the handles.",
+        "Lift your shoulders straight up.",
+        "Hold 1 second.",
+        "Slowly lower."
+      ],
+      "mistakes": [
+        "Rolling the shoulders",
+        "Moving the head"
       ]
     },
     "bar_pushdown": {
       "name": "Triceps Pushdown (Bar)",
-      "about": "Push the cable bar down",
       "group": "Arms",
+      "sub": "Triceps",
       "part": "Triceps (back of arm)",
       "feel": "Back of your upper arm.",
       "equipment": "Cable machine + straight bar",
       "demo": "demos/bar_pushdown.webp",
       "thumb": "demos/bar_pushdown_t.webp",
       "video": "https://www.youtube.com/watch?v=LXkCrxn3caQ",
+      "alts": [
+        "rope_pushdown",
+        "vbar_pushdown"
+      ],
       "steps": [
         "Stand facing the cable machine. Hold the bar, palms down.",
         "Keep elbows close to your body.",
@@ -625,18 +1056,23 @@
       "mistakes": [
         "Elbows moving forward and back",
         "Leaning your body weight on it"
-      ]
+      ],
+      "about": "Push the cable bar down"
     },
     "rope_pushdown": {
       "name": "Triceps Pushdown (Rope)",
-      "about": "Push the cable rope down and apart",
       "group": "Arms",
+      "sub": "Triceps",
       "part": "Triceps (back of arm)",
       "feel": "Back of your upper arm, near the elbow.",
       "equipment": "Cable machine + rope",
       "demo": "demos/rope_pushdown.webp",
       "thumb": "demos/rope_pushdown_t.webp",
       "video": "https://www.youtube.com/watch?v=n2FSCB4vRSA",
+      "alts": [
+        "bar_pushdown",
+        "vbar_pushdown"
+      ],
       "steps": [
         "Attach the rope. Hold both ends, thumbs up.",
         "Keep elbows close to your body.",
@@ -646,18 +1082,43 @@
       "mistakes": [
         "Elbows moving",
         "Bending forward too much"
+      ],
+      "about": "Push the cable rope down and apart"
+    },
+    "vbar_pushdown": {
+      "name": "Triceps Pushdown (V-Bar)",
+      "group": "Arms",
+      "sub": "Triceps",
+      "part": "Triceps (back of arm)",
+      "feel": "Back of your upper arm.",
+      "equipment": "Cable machine + V-bar",
+      "demo": "demos/vbar_pushdown.webp",
+      "thumb": "demos/vbar_pushdown_t.webp",
+      "steps": [
+        "Attach the V-bar high. Hold it with both hands.",
+        "Elbows close to your body.",
+        "Push down until arms are straight.",
+        "Slowly let it come up."
+      ],
+      "mistakes": [
+        "Elbows moving",
+        "Leaning on the bar"
       ]
     },
     "overhead_rope_ext": {
       "name": "Overhead Rope Extension",
-      "about": "Push the rope up over your head",
       "group": "Arms",
+      "sub": "Triceps",
       "part": "Triceps (long head)",
       "feel": "Back of your upper arm, a stretch near the shoulder.",
       "equipment": "Cable machine + rope",
       "demo": "demos/overhead_rope_ext.webp",
       "thumb": "demos/overhead_rope_ext_t.webp",
       "video": "https://www.youtube.com/watch?v=u4sEGN7FlzQ",
+      "alts": [
+        "db_overhead_ext",
+        "db_kickback"
+      ],
       "steps": [
         "Attach the rope low. Hold it and turn away from the machine.",
         "Bring the rope behind your head, elbows pointing up.",
@@ -668,22 +1129,63 @@
         "Elbows opening wide",
         "Arching the lower back"
       ],
-      "tip": "Stand with one foot in front for balance."
+      "tip": "Stand with one foot in front for balance.",
+      "about": "Push the rope up over your head"
+    },
+    "db_overhead_ext": {
+      "name": "Seated Dumbbell Overhead Extension",
+      "group": "Arms",
+      "sub": "Triceps",
+      "part": "Triceps (long head)",
+      "feel": "Back of your upper arm.",
+      "equipment": "One dumbbell, Bench with back support",
+      "demo": "demos/db_overhead_ext.webp",
+      "thumb": "demos/db_overhead_ext_t.webp",
+      "steps": [
+        "Sit tall. Hold one dumbbell with both hands over your head.",
+        "Lower it behind your head by bending the elbows.",
+        "Straighten your arms back up.",
+        "Elbows point up the whole time."
+      ],
+      "mistakes": [
+        "Elbows opening wide",
+        "Arching the back"
+      ]
+    },
+    "db_kickback": {
+      "name": "Dumbbell Kickback",
+      "group": "Arms",
+      "sub": "Triceps",
+      "part": "Triceps (back of arm)",
+      "feel": "Back of your upper arm.",
+      "equipment": "Dumbbell, Bench",
+      "demo": "demos/db_kickback.webp",
+      "thumb": "demos/db_kickback_t.webp",
+      "steps": [
+        "One knee and hand on a bench. Dumbbell in the other hand.",
+        "Upper arm close to your body, elbow bent.",
+        "Straighten your arm back.",
+        "Slowly bend it again."
+      ],
+      "mistakes": [
+        "Swinging the arm",
+        "Dropping the elbow"
+      ]
     },
     "biceps_curl": {
       "name": "Biceps Curl",
-      "about": "Lift the weight up to your shoulders",
       "group": "Arms",
+      "sub": "Biceps",
       "part": "Biceps (front of arm)",
       "feel": "Front of your upper arm.",
       "equipment": "Dumbbells or a bar",
       "demo": "demos/biceps_curl.webp",
       "thumb": "demos/biceps_curl_t.webp",
       "video": "https://www.youtube.com/watch?v=XE_pHwbst04",
-      "altVideo": {
-        "label": "Watch the bar version",
-        "url": "https://www.youtube.com/watch?v=QZEqB6wUPxQ"
-      },
+      "alts": [
+        "barbell_curl",
+        "machine_preacher"
+      ],
       "steps": [
         "Stand straight. Palms facing forward.",
         "Keep elbows next to your body.",
@@ -696,21 +1198,66 @@
         "Dropping the weight fast"
       ],
       "tip": "You can use dumbbells or a bar. Both are fine.",
-      "altDemo": {
-        "label": "Bar version",
-        "url": "demos/biceps_curl_alt.webp"
+      "about": "Lift the weight up to your shoulders",
+      "altVideo": {
+        "label": "Watch the bar version",
+        "url": "https://www.youtube.com/watch?v=QZEqB6wUPxQ"
       }
+    },
+    "barbell_curl": {
+      "name": "Barbell Curl",
+      "group": "Arms",
+      "sub": "Biceps",
+      "part": "Biceps (front of arm)",
+      "feel": "Front of your upper arm.",
+      "equipment": "Barbell or EZ-bar",
+      "demo": "demos/biceps_curl_alt.webp",
+      "thumb": "demos/biceps_curl_alt_t.webp",
+      "steps": [
+        "Stand tall, hold the bar with palms up.",
+        "Elbows next to your body.",
+        "Curl the bar up to your shoulders.",
+        "Slowly lower."
+      ],
+      "mistakes": [
+        "Swinging the back",
+        "Elbows moving forward"
+      ]
+    },
+    "machine_preacher": {
+      "name": "Machine Preacher Curl",
+      "group": "Arms",
+      "sub": "Biceps",
+      "part": "Biceps",
+      "feel": "Front of your upper arm.",
+      "equipment": "Preacher curl machine",
+      "demo": "demos/machine_preacher.webp",
+      "thumb": "demos/machine_preacher_t.webp",
+      "steps": [
+        "Sit with your upper arms on the pad.",
+        "Hold the handles, arms almost straight.",
+        "Curl up toward your shoulders.",
+        "Slowly lower."
+      ],
+      "mistakes": [
+        "Lifting the elbows off the pad",
+        "Dropping the weight fast"
+      ]
     },
     "hammer_curl": {
       "name": "Hammer Curl",
-      "about": "Curl dumbbells with thumbs up",
       "group": "Arms",
+      "sub": "Biceps",
       "part": "Biceps, Forearms",
       "feel": "Front of upper arm and top of the forearm.",
       "equipment": "Dumbbells",
       "demo": "demos/hammer_curl.webp",
       "thumb": "demos/hammer_curl_t.webp",
       "video": "https://www.youtube.com/watch?v=8XLxfXROrTo",
+      "alts": [
+        "rope_hammer_curl",
+        "cross_hammer_curl"
+      ],
       "steps": [
         "Stand straight. Hold dumbbells with thumbs pointing up.",
         "Keep elbows next to your body.",
@@ -720,18 +1267,62 @@
       "mistakes": [
         "Swinging",
         "Turning the wrists"
+      ],
+      "about": "Curl dumbbells with thumbs up"
+    },
+    "rope_hammer_curl": {
+      "name": "Cable Rope Hammer Curl",
+      "group": "Arms",
+      "sub": "Biceps",
+      "part": "Biceps, Forearms",
+      "feel": "Front of your arm and top of the forearm.",
+      "equipment": "Cable machine + rope",
+      "demo": "demos/rope_hammer_curl.webp",
+      "thumb": "demos/rope_hammer_curl_t.webp",
+      "steps": [
+        "Set the cable low with the rope. Hold both ends, thumbs up.",
+        "Elbows next to your body.",
+        "Curl the rope up.",
+        "Slowly lower."
+      ],
+      "mistakes": [
+        "Swinging",
+        "Elbows moving"
+      ]
+    },
+    "cross_hammer_curl": {
+      "name": "Cross-Body Hammer Curl",
+      "group": "Arms",
+      "sub": "Biceps",
+      "part": "Biceps, Forearms",
+      "feel": "Front of your arm and forearm.",
+      "equipment": "Dumbbells",
+      "demo": "demos/cross_hammer_curl.webp",
+      "thumb": "demos/cross_hammer_curl_t.webp",
+      "steps": [
+        "Hold dumbbells, thumbs up.",
+        "Curl one dumbbell up across your body toward the other shoulder.",
+        "Slowly lower.",
+        "Switch arms."
+      ],
+      "mistakes": [
+        "Swinging the body"
       ]
     },
     "wrist_curl": {
       "name": "Wrist Curl (Bar)",
-      "about": "Lift the bar using only your wrists",
       "group": "Arms",
+      "sub": "Forearms",
       "part": "Forearms",
       "feel": "Inside of your forearm.",
       "equipment": "Bar (light) + bench",
       "demo": "demos/wrist_curl.webp",
       "thumb": "demos/wrist_curl_t.webp",
       "video": "https://www.youtube.com/watch?v=3VLTzIrnb5g",
+      "alts": [
+        "db_wrist_curl",
+        "reverse_wrist_curl"
+      ],
       "steps": [
         "Sit on a bench. Forearms on your thighs, palms up.",
         "Hold a light bar. Wrists just past your knees.",
@@ -741,18 +1332,63 @@
       "mistakes": [
         "Lifting the forearms off the thighs",
         "Weight too heavy"
+      ],
+      "about": "Lift the bar using only your wrists"
+    },
+    "db_wrist_curl": {
+      "name": "Dumbbell Wrist Curl",
+      "group": "Arms",
+      "sub": "Forearms",
+      "part": "Forearms",
+      "feel": "Inside of your forearm.",
+      "equipment": "Light dumbbells, Bench",
+      "demo": "demos/db_wrist_curl.webp",
+      "thumb": "demos/db_wrist_curl_t.webp",
+      "steps": [
+        "Sit. Forearms on your thighs, palms up, dumbbells in hand.",
+        "Let the dumbbells roll down a little.",
+        "Curl your wrists up.",
+        "Slowly lower."
+      ],
+      "mistakes": [
+        "Lifting the forearms",
+        "Too heavy"
+      ]
+    },
+    "reverse_wrist_curl": {
+      "name": "Reverse Wrist Curl",
+      "group": "Arms",
+      "sub": "Forearms",
+      "part": "Forearms (top)",
+      "feel": "Top of your forearm.",
+      "equipment": "Light bar, Bench",
+      "demo": "demos/reverse_wrist_curl.webp",
+      "thumb": "demos/reverse_wrist_curl_t.webp",
+      "steps": [
+        "Kneel or sit, forearms on a bench, palms down.",
+        "Hold a light bar.",
+        "Lift the back of your hands up.",
+        "Slowly lower."
+      ],
+      "mistakes": [
+        "Too heavy",
+        "Moving the forearms"
       ]
     },
     "leg_press": {
       "name": "Leg Press",
-      "about": "Push the platform with your feet",
       "group": "Legs",
+      "sub": "Thighs (front)",
       "part": "Thighs (Quads), Hips",
       "feel": "Front of your thighs and your hips.",
       "equipment": "Leg press machine",
       "demo": "demos/leg_press.webp",
       "thumb": "demos/leg_press_t.webp",
       "video": "https://www.youtube.com/watch?v=q4W4_VJbKW0",
+      "alts": [
+        "hack_squat",
+        "goblet_squat"
+      ],
       "steps": [
         "Keep your back and hips flat on the seat.",
         "Feet on the platform, shoulder-width apart.",
@@ -764,18 +1400,23 @@
         "Hips lifting off the seat",
         "Knees falling inward"
       ],
-      "tip": "If your knees hurt, don't go down as far."
+      "tip": "If your knees hurt, don't go down as far.",
+      "about": "Push the platform with your feet"
     },
     "leg_extension": {
       "name": "Seated Leg Extension",
-      "about": "Sit and straighten your legs",
       "group": "Legs",
+      "sub": "Thighs (front)",
       "part": "Front of thighs (Quads)",
       "feel": "Front of your thighs, above the knee.",
       "equipment": "Leg extension machine",
       "demo": "demos/leg_extension.webp",
       "thumb": "demos/leg_extension_t.webp",
       "video": "https://www.youtube.com/watch?v=KtgdO4QEdHk",
+      "alts": [
+        "goblet_squat",
+        "hack_squat"
+      ],
       "steps": [
         "Sit on the machine. Pad sits on top of your ankles.",
         "Hold the handles. Back on the seat.",
@@ -786,18 +1427,66 @@
         "Heavy weight with jerks",
         "Going too fast"
       ],
-      "tip": "If your knees hurt, keep it very light."
+      "tip": "If your knees hurt, keep it very light.",
+      "about": "Sit and straighten your legs"
+    },
+    "hack_squat": {
+      "name": "Hack Squat Machine",
+      "group": "Legs",
+      "sub": "Thighs (front)",
+      "part": "Thighs (Quads), Hips",
+      "feel": "Front of your thighs.",
+      "equipment": "Hack squat machine",
+      "demo": "demos/hack_squat.webp",
+      "thumb": "demos/hack_squat_t.webp",
+      "steps": [
+        "Back on the pad, shoulders under the pads.",
+        "Feet shoulder-width on the platform.",
+        "Release the safety. Slowly bend your knees.",
+        "Push back up through your heels."
+      ],
+      "mistakes": [
+        "Knees falling inward",
+        "Going too deep if knees hurt"
+      ],
+      "tip": "Keep the safety handles in reach."
+    },
+    "goblet_squat": {
+      "name": "Goblet Squat",
+      "group": "Legs",
+      "sub": "Thighs (front)",
+      "part": "Thighs, Hips, Core",
+      "feel": "Front of your thighs and hips.",
+      "equipment": "One dumbbell",
+      "demo": "demos/goblet_squat.webp",
+      "thumb": "demos/goblet_squat_t.webp",
+      "steps": [
+        "Hold a dumbbell at your chest with both hands.",
+        "Feet shoulder-width apart.",
+        "Sit down like on a chair. Chest up.",
+        "Stand up through your heels."
+      ],
+      "mistakes": [
+        "Leaning forward",
+        "Heels lifting"
+      ],
+      "tip": "Use a bench behind you if you need a target."
     },
     "lying_leg_curl": {
       "name": "Lying Leg Curl",
-      "about": "Lie down and bend your legs up",
       "group": "Legs",
+      "sub": "Hamstrings (back of thighs)",
       "part": "Back of thighs (Hamstrings)",
       "feel": "Back of your thighs.",
       "equipment": "Lying leg curl machine",
       "demo": "demos/lying_leg_curl.webp",
       "thumb": "demos/lying_leg_curl_t.webp",
       "video": "https://www.youtube.com/watch?v=i6m3Vp9H40Y",
+      "alts": [
+        "seated_leg_curl",
+        "standing_leg_curl",
+        "db_rdl"
+      ],
       "steps": [
         "Lie face down. Pad just above your heels.",
         "Hold the handles. Hips stay on the bench.",
@@ -808,18 +1497,84 @@
         "Hips lifting up",
         "Jerking the weight",
         "Letting it drop fast"
+      ],
+      "about": "Lie down and bend your legs up"
+    },
+    "seated_leg_curl": {
+      "name": "Seated Leg Curl",
+      "group": "Legs",
+      "sub": "Hamstrings (back of thighs)",
+      "part": "Hamstrings",
+      "feel": "Back of your thighs.",
+      "equipment": "Seated leg curl machine",
+      "demo": "demos/seated_leg_curl.webp",
+      "thumb": "demos/seated_leg_curl_t.webp",
+      "steps": [
+        "Sit with the pad just above your heels. Lock the thigh pad.",
+        "Bend your legs down and back.",
+        "Hold 1 second.",
+        "Slowly return."
+      ],
+      "mistakes": [
+        "Hips lifting",
+        "Jerking the weight"
       ]
+    },
+    "standing_leg_curl": {
+      "name": "Standing Leg Curl",
+      "group": "Legs",
+      "sub": "Hamstrings (back of thighs)",
+      "part": "Hamstrings",
+      "feel": "Back of your thigh.",
+      "equipment": "Machine or cable, or no weight",
+      "demo": "demos/standing_leg_curl.webp",
+      "thumb": "demos/standing_leg_curl_t.webp",
+      "steps": [
+        "Hold something for balance.",
+        "Bend one knee and bring the heel to your bottom.",
+        "Slowly lower.",
+        "Switch legs."
+      ],
+      "mistakes": [
+        "Swinging the leg",
+        "Leaning forward"
+      ]
+    },
+    "db_rdl": {
+      "name": "Dumbbell Romanian Deadlift",
+      "group": "Legs",
+      "sub": "Hamstrings (back of thighs)",
+      "part": "Hamstrings, Hips",
+      "feel": "Back of your thighs (a stretch).",
+      "equipment": "Dumbbells",
+      "demo": "demos/db_rdl.webp",
+      "thumb": "demos/db_rdl_t.webp",
+      "steps": [
+        "Stand tall with dumbbells in front of your thighs.",
+        "Knees soft. Push your hips back, dumbbells slide down your legs.",
+        "Stop when you feel a stretch (around the knees).",
+        "Squeeze your hips to stand up."
+      ],
+      "mistakes": [
+        "Rounding the back",
+        "Going too low"
+      ],
+      "tip": "Keep it light. Back must stay flat."
     },
     "adductor": {
       "name": "Adductor Machine",
-      "about": "Squeeze your legs together",
       "group": "Legs",
+      "sub": "Inner Thighs",
       "part": "Inner thighs",
       "feel": "Inside of your thighs.",
       "equipment": "Hip adductor machine",
       "demo": "demos/adductor.webp",
       "thumb": "demos/adductor_t.webp",
       "video": "https://www.youtube.com/watch?v=CjAVezAggkI",
+      "alts": [
+        "cable_adduction",
+        "side_adduction"
+      ],
       "steps": [
         "Sit with your back on the pad. Legs on the outside of the pads.",
         "Start with legs open only as wide as is comfortable.",
@@ -829,18 +1584,63 @@
       "mistakes": [
         "Opening too wide",
         "Letting the weight slam back"
+      ],
+      "about": "Squeeze your legs together"
+    },
+    "cable_adduction": {
+      "name": "Cable Hip Adduction",
+      "group": "Legs",
+      "sub": "Inner Thighs",
+      "part": "Inner thighs",
+      "feel": "Inside of your thigh.",
+      "equipment": "Cable machine + ankle strap",
+      "demo": "demos/cable_adduction.webp",
+      "thumb": "demos/cable_adduction_t.webp",
+      "steps": [
+        "Strap the cable to the ankle near the machine.",
+        "Hold the machine for balance.",
+        "Pull the leg across in front of the other one.",
+        "Slowly return. Switch legs."
+      ],
+      "mistakes": [
+        "Leaning the body",
+        "Swinging"
+      ]
+    },
+    "side_adduction": {
+      "name": "Side-Lying Leg Lift",
+      "group": "Legs",
+      "sub": "Inner Thighs",
+      "part": "Inner thighs",
+      "feel": "Inside of your lower thigh.",
+      "equipment": "Mat",
+      "demo": "demos/side_adduction.webp",
+      "thumb": "demos/side_adduction_t.webp",
+      "steps": [
+        "Lie on your side. Bend the top leg and put that foot in front.",
+        "Keep the bottom leg straight.",
+        "Lift the bottom leg up a little.",
+        "Slowly lower."
+      ],
+      "mistakes": [
+        "Rolling back",
+        "Lifting too high"
       ]
     },
     "leg_press_calf": {
       "name": "Calf Raise on Leg Press",
-      "about": "Push the platform with your toes",
       "group": "Legs",
+      "sub": "Calves",
       "part": "Calves",
       "feel": "Back of your lower legs (calves). Stretch at the bottom.",
       "equipment": "Leg press machine",
       "demo": "demos/leg_press_calf.webp",
       "thumb": "demos/leg_press_calf_t.webp",
       "video": "https://www.youtube.com/watch?v=PYZY00hI43w",
+      "alts": [
+        "standing_calf_raise",
+        "seated_calf_raise"
+      ],
       "steps": [
         "Sit in the leg press. Put only your toes on the bottom of the platform.",
         "Legs straight, knees soft (not locked).",
@@ -851,18 +1651,63 @@
         "Bending the knees",
         "Bouncing fast"
       ],
-      "tip": "Keep the safety locks on. Go slow."
+      "tip": "Keep the safety locks on. Go slow.",
+      "about": "Push the platform with your toes"
+    },
+    "standing_calf_raise": {
+      "name": "Standing Calf Raise",
+      "group": "Legs",
+      "sub": "Calves",
+      "part": "Calves",
+      "feel": "Back of your lower legs.",
+      "equipment": "None / Wall or step",
+      "demo": "demos/standing_calf_raise.webp",
+      "thumb": "demos/standing_calf_raise_t.webp",
+      "steps": [
+        "Stand holding a wall. Toes on a step if you have one.",
+        "Rise up on your toes.",
+        "Hold 1 second.",
+        "Slowly lower, heels a little below the step."
+      ],
+      "mistakes": [
+        "Bouncing",
+        "Bending the knees"
+      ]
+    },
+    "seated_calf_raise": {
+      "name": "Seated Calf Raise",
+      "group": "Legs",
+      "sub": "Calves",
+      "part": "Calves (lower)",
+      "feel": "Back of your lower legs.",
+      "equipment": "Seated calf machine",
+      "demo": "demos/seated_calf_raise.webp",
+      "thumb": "demos/seated_calf_raise_t.webp",
+      "steps": [
+        "Sit with the pad on your thighs, toes on the platform.",
+        "Lower your heels for a stretch.",
+        "Push up on your toes.",
+        "Hold 1 second, slowly lower."
+      ],
+      "mistakes": [
+        "Bouncing",
+        "Short movement"
+      ]
     },
     "incline_walk": {
       "name": "Incline Treadmill Walk",
-      "about": "Walk uphill on the treadmill",
       "group": "Cardio",
+      "sub": "Cardio",
       "part": "Heart, Legs, Fat burn",
       "feel": "Breathing faster, legs working. You can still talk.",
       "equipment": "Treadmill",
       "demo": "demos/incline_walk.webp",
       "thumb": "demos/incline_walk_t.webp",
       "video": "https://www.youtube.com/watch?v=9ccVxEvWtpA",
+      "alts": [
+        "stationary_bike",
+        "stepmill"
+      ],
       "steps": [
         "Set speed to 4–5 km/h.",
         "Set incline to 5–8%. Start lower if it is hard.",
@@ -874,7 +1719,50 @@
         "Leaning forward",
         "Incline too high on day 1"
       ],
-      "tip": "Every week, add a little incline or speed."
+      "tip": "Every week, add a little incline or speed.",
+      "about": "Walk uphill on the treadmill"
+    },
+    "stationary_bike": {
+      "name": "Stationary Bike",
+      "group": "Cardio",
+      "sub": "Cardio",
+      "part": "Heart, Legs",
+      "feel": "Breathing faster, legs working. You can still talk.",
+      "equipment": "Exercise bike",
+      "demo": "demos/stationary_bike.webp",
+      "thumb": "demos/stationary_bike_t.webp",
+      "steps": [
+        "Set the seat so the knee is slightly bent at the bottom.",
+        "Pedal at an easy pace.",
+        "Add a little resistance after 2 minutes.",
+        "Ride for 20 minutes."
+      ],
+      "mistakes": [
+        "Seat too low",
+        "Resistance too high"
+      ],
+      "tip": "Easy on the knees. Good choice if walking hurts."
+    },
+    "stepmill": {
+      "name": "Stair Climber",
+      "group": "Cardio",
+      "sub": "Cardio",
+      "part": "Heart, Legs, Hips",
+      "feel": "Breathing faster, legs working.",
+      "equipment": "Stair climber machine",
+      "demo": "demos/stepmill.webp",
+      "thumb": "demos/stepmill_t.webp",
+      "steps": [
+        "Start at the slowest speed.",
+        "Hold the rails lightly. Stand tall.",
+        "Step full steps.",
+        "Go for 10–20 minutes."
+      ],
+      "mistakes": [
+        "Leaning on the rails",
+        "Speed too high"
+      ],
+      "tip": "Harder than walking. Start with 5–10 minutes."
     }
   }
 }
