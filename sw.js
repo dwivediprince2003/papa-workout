@@ -1,14 +1,19 @@
-// App files: network-first (always try to get the latest plan), cache fallback when offline.
-// Exercise demo animations: cache-first, so once seen they load instantly and work offline.
-const C = "papa-workout-v5";
-const DEMOS = "papa-workout-demos-v1";
+// App files (page, plan): network-first so updates show up, cache fallback when offline.
+// Exercise demos (demos/*.webp, and older remote GIFs): cache-first — they never change,
+// so once seen they load instantly and work offline.
+const C = "papa-workout-v6";
+const DEMOS = "papa-workout-demos-v2";
 self.addEventListener("install", e => self.skipWaiting());
-self.addEventListener("activate", e => e.waitUntil(self.clients.claim()));
+self.addEventListener("activate", e => e.waitUntil(
+  caches.keys().then(keys => Promise.all(keys.filter(k => k !== C && k !== DEMOS).map(k => caches.delete(k))))
+    .then(() => self.clients.claim())
+));
 self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
   const u = new URL(e.request.url);
+  const isDemo = (u.origin === location.origin && u.pathname.includes("/demos/")) || u.hostname === "static.exercisedb.dev";
 
-  if (u.hostname === "static.exercisedb.dev") {
+  if (isDemo) {
     e.respondWith(caches.open(DEMOS).then(async c => {
       const hit = await c.match(e.request);
       if (hit) return hit;
