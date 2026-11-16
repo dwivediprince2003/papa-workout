@@ -46,13 +46,29 @@ jobs:
           KEYSTORE_PATH: ${{ runner.temp }}/release.p12
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           VERSION_CODE: ${{ github.run_number }}
-        run: gradle -p android assembleRelease --no-daemon
+        run: |
+          gradle -p android assembleRelease --no-daemon
+          cp android/app/build/outputs/apk/release/app-release.apk WorkoutCompanion.apk
+
+      # Second app for sharing: separate package, opens the web app in "join" mode (asks the user's name)
+      - name: Build shareable APK
+        env:
+          KEYSTORE_PATH: ${{ runner.temp }}/release.p12
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          VERSION_CODE: ${{ github.run_number }}
+          APP_ID_SUFFIX: .share
+        run: |
+          F=android/app/src/main/res/values/strings.xml
+          sed -i -E 's#(<string name="app_url">)([^<]*)(</string>)#\1\2?join\3#' "$F"
+          sed -i 's#<string name="app_name">Workout</string>#<string name="app_name">Workout Companion</string>#' "$F"
+          grep -E 'app_url|app_name' "$F"
+          gradle -p android assembleRelease --no-daemon
+          cp android/app/build/outputs/apk/release/app-release.apk WorkoutCompanionShare.apk
 
       - name: Publish APK (fixed download link)
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          cp android/app/build/outputs/apk/release/app-release.apk WorkoutCompanion.apk
           gh release delete apk --yes --cleanup-tag || true
-          gh release create apk WorkoutCompanion.apk --title "Workout Companion (Android)" \
-            --notes "Install WorkoutCompanion.apk on Android. Plan and content updates load automatically from the web app — no reinstall needed."
+          gh release create apk WorkoutCompanion.apk WorkoutCompanionShare.apk --title "Workout Companion (Android)" \
+            --notes "WorkoutCompanion.apk is the personal build. WorkoutCompanionShare.apk is the shareable build that asks each user for their name. Plan and content updates load automatically from the web app — no reinstall needed."

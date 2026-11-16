@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle saved) {
         super.onCreate(saved);
-        getWindow().setStatusBarColor(Color.parseColor("#151B2E"));
+        getWindow().setStatusBarColor(Color.parseColor("#0A0C11"));
 
         String url = getString(R.string.app_url);
         appHost = Uri.parse(url).getHost();

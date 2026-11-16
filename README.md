@@ -3,7 +3,9 @@
 A guided gym-workout app for beginners. It runs as a Progressive Web App and ships as a lightweight Android app. The plan, exercises and content live in a single JSON file, so updates reach the phone without reinstalling anything.
 
 - **Web app:** https://dwivediprince2003.github.io/workout-companion/
-- **Android APK (latest build):** https://github.com/dwivediprince2003/workout-companion/releases/download/apk/WorkoutCompanion.apk
+- **Share page (anyone can install):** https://dwivediprince2003.github.io/workout-companion/get/
+- **Android APK, personal build:** https://github.com/dwivediprince2003/workout-companion/releases/download/apk/WorkoutCompanion.apk
+- **Android APK, shareable build:** https://github.com/dwivediprince2003/workout-companion/releases/download/apk/WorkoutCompanionShare.apk
 
 ## Features
 
@@ -14,7 +16,11 @@ A guided gym-workout app for beginners. It runs as a Progressive Web App and shi
 - **Progress:** warm-up and working sets tracked per day, plus a per-exercise weight log ("Last time: 20 kg") for progressive overload.
 - **Schedule engine:** a repeating split (Push → Back → Arms → Legs) that skips rest days, or a fixed weekday plan.
 - **Offline-first:** a service worker caches the app and demos; the plan refreshes in the background whenever the app opens.
-- **Large type and big touch targets**, a light/dark theme, and minimal text.
+- **Machine busy?** Swap any exercise for an alternative for today, with one tap to undo.
+- **Smart weights:** after the last set, rate it Easy, Good or Hard; next time the app suggests the weight.
+- **Gym-friendly:** keeps the screen on during a workout, shows what is up next, and counts workouts in the last 7 days.
+- **Shareable copy:** open the app with `?join` and it asks for the user's name; their plan starts on their first day. Progress stays on each phone.
+- **Large type and big touch targets**, a dark high-contrast theme, and minimal text.
 
 ## How it works
 
@@ -30,8 +36,9 @@ Android app (WebView) ───┘  loads the hosted app, so content updates nee
 | `index.html` | The whole UI: home, guided session, rest timer, library. |
 | `sw.js` | Offline cache (network-first for app/plan, cache-first for demos). |
 | `demos/` | Exercise demos: 600 px animated WebP plus 240 px thumbnails; `demos/real/` holds start/finish photos. |
+| `get/` | Share page with install links. |
 | `android/` | Minimal WebView shell (full screen, back button, full-screen video, external links). |
-| `.github/workflows/apk.yml` | Builds and signs the APK and publishes it as the `apk` release when `android/` changes. |
+| `.github/workflows/apk.yml` | Builds and signs both APKs (personal and shareable) and publishes them as the `apk` release when `android/` changes. |
 
 ## Editing the plan (`plan.json`)
 

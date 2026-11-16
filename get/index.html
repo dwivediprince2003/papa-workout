@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Workout Companion</title>
+<meta name="description" content="A simple guided gym app. One exercise at a time, with real photos, rest timer and weight tracking.">
+<meta property="og:title" content="Workout Companion">
+<meta property="og:description" content="A simple guided gym app. Real photos, rest timer, weight tracking.">
+<meta name="theme-color" content="#0A0C11">
+<link rel="icon" href="../icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0C11;--card:#14171E;--line:#262B36;--ink:#F5F6F8;--muted:#A0A6B2;--volt:#C8FF2E;--on:#0A0C11}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(120% 60% at 100% -10%,rgba(200,255,46,.1),transparent 60%),var(--bg);color:var(--ink);
+  font-family:Inter,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.w{max-width:480px;margin:0 auto;padding:calc(44px + env(safe-area-inset-top)) 16px 40px}
+.logo{width:72px;height:72px;border-radius:22px;background:var(--volt);display:grid;place-items:center;transform:rotate(-6deg);box-shadow:0 0 40px rgba(200,255,46,.4)}
+h1{font-family:"Barlow Condensed",Inter,sans-serif;font-style:italic;font-weight:800;font-size:60px;line-height:.9;text-transform:uppercase;margin:26px 0 12px}
+p.s{color:var(--muted);font-size:18px;line-height:1.45;margin:0 0 28px}
+.f{display:grid;gap:8px;margin:0 0 30px;padding:0;list-style:none}
+.f li{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-weight:600}
+.f span{font-size:22px}
+a.b{display:flex;align-items:center;justify-content:center;gap:10px;height:64px;border-radius:20px;text-decoration:none;font-weight:800;font-size:18px;margin-top:12px}
+a.p{background:var(--volt);color:var(--on);box-shadow:0 12px 30px -8px rgba(200,255,46,.55)}
+a.g{background:var(--card);border:1px solid var(--line);color:var(--ink)}
+.n{color:var(--muted);font-size:14px;line-height:1.5;margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.n b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="w">
+  <div class="logo"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0A0C11" stroke-width="2.4" stroke-linecap="round"><path d="M7 12h10M4 8.5v7M7 6.5v11M17 6.5v11M20 8.5v7"/></svg></div>
+  <h1>Workout<br>Companion</h1>
+  <p class="s">A simple gym guide for beginners. It shows one exercise at a time, so you always know what to do next.</p>
+  <ul class="f">
+    <li><span>📸</span>Real photos: start and finish of every move</li>
+    <li><span>⏱️</span>Rest timer starts by itself</li>
+    <li><span>📈</span>Remembers your weights and tells you when to go up</li>
+    <li><span>🔁</span>Machine busy? Pick another exercise in one tap</li>
+  </ul>
+  <a class="b p" href="https://github.com/dwivediprince2003/workout-companion/releases/download/apk/WorkoutCompanionShare.apk">⬇ Download for Android</a>
+  <a class="b g" href="../?join">Open in browser (iPhone or any phone)</a>
+  <div class="n"><b>Android:</b> open the downloaded file and tap <b>Install</b>. If asked, allow installs from this source.<br>
+    <b>iPhone:</b> open in Safari, tap <b>Share</b>, then <b>Add to Home Screen</b>.</div>
+</div>
+</body>
+</html>

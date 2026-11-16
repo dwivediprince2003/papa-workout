@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16a",
+  "version": "2026-11-16b",
   "title": "Workout Plan",
   "greeting": "Hello Papa",
   "name": "Papa",
@@ -308,6 +308,10 @@
       "equipment": "None",
       "demo": "demos/jog.webp",
       "thumb": "demos/jog_t.webp",
+      "photos": [
+        "demos/real/jog_0.webp",
+        "demos/real/jog_1.webp"
+      ],
       "steps": [
         "Stay on the spot.",
         "Walk or jog lightly. Swing your arms.",
@@ -322,6 +326,10 @@
       "equipment": "None",
       "demo": "demos/wall_march.webp",
       "thumb": "demos/wall_march_t.webp",
+      "photos": [
+        "demos/real/wall_march_0.webp",
+        "demos/real/wall_march_1.webp"
+      ],
       "steps": [
         "Hands on a wall, lean a little.",
         "Lift one knee up, then the other.",
@@ -354,6 +362,10 @@
       "equipment": "None",
       "demo": "demos/side_stretch.webp",
       "thumb": "demos/side_stretch_t.webp",
+      "photos": [
+        "demos/real/side_stretch_0.webp",
+        "demos/real/side_stretch_1.webp"
+      ],
       "steps": [
         "Reach one arm over your head.",
         "Lean gently to the side.",
@@ -758,7 +770,7 @@
       "video": "https://www.youtube.com/watch?v=pgrWjBfaFe8",
       "alts": [
         "cable_lateral_raise",
-        "machine_lateral_raise"
+        "seated_lateral_raise"
       ],
       "steps": [
         "Stand with a light dumbbell in each hand.",
@@ -798,25 +810,29 @@
         "Going above the shoulder"
       ]
     },
-    "machine_lateral_raise": {
-      "name": "Machine Lateral Raise",
+    "seated_lateral_raise": {
+      "name": "Seated Lateral Raise",
       "group": "Shoulders",
       "sub": "Side Shoulders",
       "part": "Side of shoulders",
       "feel": "Side of your shoulders.",
-      "equipment": "Lateral raise machine",
-      "demo": "demos/machine_lateral_raise.webp",
-      "thumb": "demos/machine_lateral_raise_t.webp",
+      "equipment": "Dumbbells, bench",
+      "thumb": "demos/seated_lateral_raise_t.webp",
+      "photos": [
+        "demos/real/seated_lateral_raise_0.webp",
+        "demos/real/seated_lateral_raise_1.webp"
+      ],
       "steps": [
-        "Sit with your arms on the pads.",
+        "Sit at the end of a bench. Dumbbells at your sides.",
         "Lift your arms out to the side, up to shoulder height.",
         "Hold 1 second.",
         "Slowly lower."
       ],
       "mistakes": [
-        "Shrugging the shoulders up",
-        "Going too fast"
-      ]
+        "Swinging the body",
+        "Lifting above the shoulders"
+      ],
+      "tip": "Sitting stops you from swinging. Use light weights."
     },
     "reverse_pec_deck": {
       "name": "Reverse Pec Deck",
@@ -955,22 +971,25 @@
       ]
     },
     "reverse_grip_pulldown": {
-      "name": "Machine Pulldown",
+      "name": "Reverse-Grip Pulldown",
       "group": "Back",
       "sub": "Lats (back width)",
       "part": "Back (Lats), Biceps",
-      "feel": "Sides of your back.",
-      "equipment": "Pulldown machine",
-      "demo": "demos/reverse_grip_pulldown.webp",
+      "feel": "Lower sides of your back.",
+      "equipment": "Lat pulldown machine",
       "thumb": "demos/reverse_grip_pulldown_t.webp",
+      "photos": [
+        "demos/real/reverse_grip_pulldown_0.webp",
+        "demos/real/reverse_grip_pulldown_1.webp"
+      ],
       "steps": [
-        "Sit and hold the handles.",
-        "Chest up, shoulders down.",
-        "Pull the handles down to your chest.",
-        "Slowly let them go up."
+        "Sit and fix the thigh pad.",
+        "Hold the bar with palms facing you, hands shoulder-width.",
+        "Chest up. Pull the bar down to your upper chest.",
+        "Slowly let it go up."
       ],
       "mistakes": [
-        "Using arms only",
+        "Leaning far back",
         "Going too fast"
       ]
     },
@@ -1793,7 +1812,7 @@
       "video": "https://www.youtube.com/watch?v=CjAVezAggkI",
       "alts": [
         "cable_adduction",
-        "side_adduction"
+        "goblet_squat"
       ],
       "steps": [
         "Sit with your back on the pad. Legs on the outside of the pads.",
@@ -1829,26 +1848,6 @@
       "mistakes": [
         "Leaning the body",
         "Swinging"
-      ]
-    },
-    "side_adduction": {
-      "name": "Side-Lying Leg Lift",
-      "group": "Legs",
-      "sub": "Inner Thighs",
-      "part": "Inner thighs",
-      "feel": "Inside of your lower thigh.",
-      "equipment": "Mat",
-      "demo": "demos/side_adduction.webp",
-      "thumb": "demos/side_adduction_t.webp",
-      "steps": [
-        "Lie on your side. Bend the top leg and put that foot in front.",
-        "Keep the bottom leg straight.",
-        "Lift the bottom leg up a little.",
-        "Slowly lower."
-      ],
-      "mistakes": [
-        "Rolling back",
-        "Lifting too high"
       ]
     },
     "leg_press_calf": {

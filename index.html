@@ -115,7 +115,7 @@ nav.tabs button svg{width:22px;height:22px}
 nav.tabs button.on{background:var(--volt);color:var(--onvolt)}
 
 /* step screen */
-.screen{position:fixed;inset:0;background:var(--bg);overflow-y:auto;z-index:20;padding-bottom:calc(124px + env(safe-area-inset-bottom))}
+.screen{position:fixed;inset:0;background:var(--bg);overflow-y:auto;z-index:20;padding-bottom:calc(150px + env(safe-area-inset-bottom))}
 .top{position:sticky;top:0;z-index:3;background:linear-gradient(var(--bg) 75%,transparent);display:flex;align-items:center;gap:12px;padding:calc(10px + env(safe-area-inset-top)) 16px 14px}
 .top .x{width:46px;height:46px;border-radius:15px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;flex:none}
 .segs{flex:1;display:flex;gap:4px}
@@ -189,7 +189,7 @@ details.acc[open] summary .chev{transform:rotate(90deg)}
 .lead{margin:8px 2px 0;color:var(--muted);font-size:17px}
 
 /* footer action */
-.foot{position:fixed;left:0;right:0;bottom:0;z-index:25;background:linear-gradient(to top,var(--bg) 65%,transparent);padding:18px 16px calc(14px + env(safe-area-inset-bottom))}
+.foot{position:fixed;left:0;right:0;bottom:0;z-index:25;background:linear-gradient(to top,var(--bg) 82%,transparent);padding:22px 16px calc(14px + env(safe-area-inset-bottom))}
 .foot .in{max-width:560px;margin:0 auto;display:flex;gap:10px}
 .foot .sec-b{width:64px;height:66px;border-radius:20px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;flex:none}
 .foot .pri{flex:1;height:66px;border-radius:20px;background:#fff;color:var(--onvolt);font-family:var(--disp);font-weight:800;font-style:italic;font-size:25px;text-transform:uppercase;letter-spacing:.3px;
@@ -271,6 +271,39 @@ details.acc[open] summary .chev{transform:rotate(90deg)}
 .dmode button{padding:8px 14px;border-radius:11px;font-size:14px;font-weight:800;color:var(--muted)}
 .dmode button.on{background:var(--volt);color:var(--onvolt)}
 .vlinks{align-items:center}
+/* friendlier extras */
+.streak{margin-top:14px;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:15px;font-weight:600;color:var(--muted)}
+.streak b{color:var(--volt);font-size:17px}
+.row .swp{font-size:13px;font-weight:700;color:var(--heat);margin-top:2px}
+.swapnote{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;padding:12px 14px;border-radius:16px;background:rgba(255,90,31,.12);border:1px solid rgba(255,90,31,.35);font-size:15px;color:#FFC7B0}
+.swapnote button{padding:8px 14px;border-radius:12px;background:var(--heat);color:#fff;font-weight:800;font-size:14px;flex:none}
+.foot .un{max-width:560px;margin:0 auto 8px;padding:0 4px;font-size:14px;color:var(--muted);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.foot .un b{color:var(--ink)}
+.howq{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);text-align:center;font-weight:800;font-size:16px}
+.feelb{display:flex;gap:8px;margin-top:10px}
+.feelb button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 0;border-radius:16px;background:var(--card2);border:2px solid var(--line);font-weight:800;font-size:15px;color:var(--ink)}
+.feelb button span{font-size:26px}
+.feelb button.on{border-color:var(--volt);background:rgba(200,255,46,.12);color:var(--volt)}
+.tfeel{width:100%;max-width:340px;margin-top:10px}
+.tfeel .howq{border-top:0;padding-top:0;color:#fff}
+.tfeel .feelb button{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff;padding:10px 0;font-size:15px}
+.tfeel .feelb button.on{border-color:var(--volt);color:var(--volt);background:rgba(200,255,46,.12)}
+.wt .v small.up{color:var(--onvolt);background:var(--volt);display:inline-block;padding:3px 8px;border-radius:8px;margin-top:4px}
+.sheet .close.ghost{background:transparent;color:var(--muted);margin-top:6px;padding:12px}
+.sheet.intro .tipline b{background:var(--card2);font-size:18px;width:38px;height:38px;border-radius:12px}
+.sheet.intro .tipline{align-items:center}
+.sheet.intro .tipline strong{color:var(--volt)}
+/* join screen (shared copy) */
+.join{min-height:100vh;display:flex;align-items:center;padding:calc(30px + env(safe-area-inset-top)) 0 40px}
+.join .wrap{width:100%}
+.jlogo{width:72px;height:72px;border-radius:22px;background:var(--volt);color:var(--onvolt);display:grid;place-items:center;box-shadow:0 0 40px rgba(200,255,46,.4);transform:rotate(-6deg)}
+.jlogo svg{width:40px;height:40px}
+.jt{margin-top:26px;font-family:var(--disp);font-size:60px;font-weight:800;font-style:italic;text-transform:uppercase;line-height:.9}
+.js{color:var(--muted);font-size:18px;margin:14px 0 34px}
+.jl{display:block;font-weight:800;font-size:15px;color:var(--volt);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.ji{width:100%;font:inherit;font-size:24px;font-weight:700;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:18px;padding:18px;outline:0}
+.ji:focus{border-color:var(--volt)}
+.jb{width:100%;margin-top:14px;height:66px;border-radius:20px;background:var(--volt);color:var(--onvolt);font-family:var(--disp);font-weight:800;font-style:italic;font-size:26px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 12px 30px -8px rgba(200,255,46,.55)}
 </style>
 </head>
 <body>
@@ -290,14 +323,15 @@ const todayKey = () => iso(new Date());
 
 function workoutKeyFor(day){
   const c = P.cycle;
-  if(c?.order?.length && isIso(c.start)){
+  const start = isGuest() && isIso(store.get("myStart","")) ? store.get("myStart") : c?.start;
+  if(c?.order?.length && isIso(start)){
     const rest = c.restDays || [];
     const isRest = s => rest.includes(WD[fromIso(s).getDay()]);
     if(isRest(day)) return "rest";
     // count training days between start and this day
     let n = 0;
-    if(day >= c.start){ for(let s=c.start; s<day; s=addDays(s,1)) if(!isRest(s)) n++; }
-    else { for(let s=day; s<c.start; s=addDays(s,1)) if(!isRest(s)) n--; }
+    if(day >= start){ for(let s=start; s<day; s=addDays(s,1)) if(!isRest(s)) n++; }
+    else { for(let s=day; s<start; s=addDays(s,1)) if(!isRest(s)) n--; }
     const L = c.order.length; return c.order[((n % L) + L) % L];
   }
   return P.week?.[WD[fromIso(day).getDay()]];
@@ -337,6 +371,11 @@ const setProg = p => store.set("prog:"+todayKey(), p);
 const buzz = () => { try{ navigator.vibrate && navigator.vibrate(15); }catch(e){} };
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const $app = () => document.getElementById("app");
+// Shared copy: opened with ?join, each person types their own name and their plan starts on their first day.
+if(new URLSearchParams(location.search).has("join")) store.set("guest", true);
+const isGuest = () => store.get("guest", false);
+const myName = () => isGuest() ? store.get("myName","") : (P.name || "");
+const greeting = () => isGuest() ? "Hello " + myName() : (P.greeting || "Hello");
 
 /* ================= load plan ================= */
 async function load(){
@@ -365,6 +404,28 @@ const k = (sec,i) => sec+"/"+i;
 function doneCount(sec,i){ return (prog()[k(sec,i)]||[]).filter(Boolean).length; }
 function nextOpen(arr,total){ for(let x=0;x<total;x++) if(!arr[x]) return x; return -1; }
 function isDone(sec,i,it){ return doneCount(sec,i) >= setsOf(it); }
+// "Machine busy" swaps for one day: {"main/2":"cable_fly"}
+const swaps = day => store.get("swap:"+day, {});
+const exOf = (day, s) => swaps(day)[k(s.sec,s.i)] || s.it.ex;
+function doSwap(day, n, alt){
+  const s = stepsOf(workoutFor(day))[n], sw = swaps(day), key = k(s.sec,s.i);
+  if(!alt || alt===s.it.ex) delete sw[key]; else sw[key] = alt;
+  store.set("swap:"+day, sw); buzz(); toast(alt && alt!==s.it.ex ? "Changed for today" : "Back to your plan"); go(`w/${day}/${n}`);
+}
+// share of main sets done on a day (for the weekly count)
+function dayPct(d){
+  const w = workoutFor(d), pr = store.get("prog:"+d, {}); let t=0, n=0;
+  (w.main||[]).forEach((it,i)=>{ t += setsOf(it); n += Math.min((pr[k("main",i)]||[]).filter(Boolean).length, setsOf(it)); });
+  return t ? n/t*100 : 0;
+}
+// keep the screen on during a workout
+let wake = null;
+async function keepAwake(on){
+  try{
+    if(on){ if(!wake && navigator.wakeLock){ wake = await navigator.wakeLock.request("screen"); wake.addEventListener("release", ()=>{ wake=null; }); } }
+    else if(wake){ const x = wake; wake = null; await x.release(); }
+  }catch(e){}
+}
 // steps of a guided workout: warm-up (one screen), each main exercise, each finisher, then done
 function stepsOf(w){
   const s = [];
@@ -404,9 +465,11 @@ let selDay = null;
 function route(){
   if(!P) return;
   stopTimer(); closeSheet();
-  const [v,a,b] = decodeURIComponent(location.hash.slice(1)).split("/");
+  if(isGuest() && !myName()) return renderJoin();
+  const [v,a,b,c] = decodeURIComponent(location.hash.slice(1)).split("/");
   if(v==="w" && isIso(a)) return renderStep(a, +b||0);
-  if(v==="lib" && a) return renderLibEx(a);
+  keepAwake(false);
+  if(v==="lib" && a) return renderLibEx(a, isIso(b) ? b : null, +c||0);
   if(v==="lib") return renderLib();
   selDay = (v==="day" && isIso(a)) ? a : todayKey();
   renderHome();
@@ -418,8 +481,10 @@ function renderHome(){
   const nMain = (w.main||[]).length, pct = isToday ? progressPct(w) : 0;
   let h = `<div class="wrap rise">
     <div class="hd"><div><div class="date">${fmt(todayKey(),{weekday:"long",day:"numeric",month:"long"})}</div>
-      <h1>${esc(P.greeting||"Hello")}</h1></div>
+      <h1>${esc(greeting())}</h1></div>
       <button class="icon-btn" onclick="openTips()" aria-label="How to train">${I.info()}</button></div>`;
+  const wk = [0,1,2,3,4,5,6].filter(i=>dayPct(addDays(todayKey(),-i))>=50).length;
+  h += `<div class="streak">${wk ? `🔥 <b>${wk}</b> workout${wk>1?"s":""} done in the last 7 days` : `💪 Let's start strong!`}</div>`;
 
   h += `<div class="days">` + [0,1,2,3,4,5,6].map(n=>{ const d = addDays(todayKey(),n);
     const ww = workoutFor(d);
@@ -457,30 +522,54 @@ function renderHome(){
   const stp = stepsOf(w);
   if(nMain){
     h += `<div class="sec"><h3>Exercises</h3><small>Warm-up set + 3 × 12</small></div>`;
-    w.main.forEach((it,i)=> h += rowHtml(day, stp.findIndex(s=>s.sec==="main"&&s.i===i), it, i+1, isToday ? doneCount("main",i) : 0));
+    w.main.forEach((it,i)=> h += rowHtml(day, stp.findIndex(s=>s.sec==="main"&&s.i===i), it, i+1, isToday ? doneCount("main",i) : 0, exOf(day,{sec:"main",i,it})));
   }
   if((w.cooldown||[]).length){
     h += `<div class="sec"><h3>Finish</h3></div>`;
-    w.cooldown.forEach((it,i)=> h += rowHtml(day, stp.findIndex(s=>s.sec==="cooldown"&&s.i===i), it, null, isToday ? doneCount("cooldown",i) : 0));
+    w.cooldown.forEach((it,i)=> h += rowHtml(day, stp.findIndex(s=>s.sec==="cooldown"&&s.i===i), it, null, isToday ? doneCount("cooldown",i) : 0, exOf(day,{sec:"cooldown",i,it})));
   }
   h += `</div>` + tabs("home");
   $app().innerHTML = h;
+  if(!store.get("introSeen", false)) openIntro();
 }
-function rowHtml(day, step, it, num, done){
-  const ex = P.exercises[it.ex]; if(!ex) return "";
+function rowHtml(day, step, it, num, done, exId){
+  const ex = P.exercises[exId || it.ex]; if(!ex) return "";
   const n = setsOf(it), complete = done >= n;
   const meta = it.sets
     ? `<span class="dots">${Array.from({length:n},(_,s)=>`<i class="${s<(it.warmupSets||0)?"w":""} ${s<done?"on":""}"></i>`).join("")}</span><span>${esc(it.reps)} reps</span>`
     : `<span>${I.clock()}</span><span>${esc(it.time||it.reps||"")}</span>`;
   return `<button class="row ${complete?"done":""}" onclick="buzz();go('w/${day}/${step}')">
     <div class="th" style="background-image:url('${thumb(ex)}')">${num?`<span class="num">${num}</span>`:""}</div>
-    <div class="bd"><div class="nm">${esc(ex.name)}</div><div class="meta">${meta}</div></div>
+    <div class="bd"><div class="nm">${esc(ex.name)}</div>${exId && exId!==it.ex ? `<div class="swp">Instead of ${esc(P.exercises[it.ex]?.name)}</div>` : ""}<div class="meta">${meta}</div></div>
     <span class="go">${complete ? I.check(22,"currentColor") : I.next()}</span></button>`;
 }
 function tabs(on){
   return `<nav class="tabs">
     <button class="${on==="home"?"on":""}" onclick="go('day/'+todayKey())">${I.home()}Today</button>
     <button class="${on==="lib"?"on":""}" onclick="go('lib')">${I.grid()}Exercises</button></nav>`;
+}
+
+/* ================= JOIN (shared copy) ================= */
+function renderJoin(edit){
+  keepAwake(false);
+  $app().innerHTML = `<div class="join"><div class="wrap">
+    <div class="jlogo">${I.dumb()}</div>
+    <div class="jt">Workout<br>Companion</div>
+    <p class="js">A simple gym guide. One exercise at a time, with photos.</p>
+    <label class="jl" for="nm">What's your name?</label>
+    <input id="nm" class="ji" maxlength="20" autocomplete="given-name" placeholder="Your name" value="${esc(store.get("myName",""))}"
+      onkeydown="if(event.key==='Enter')saveName()">
+    <button class="jb" onclick="saveName()">${edit ? "Save" : "Let's start"} ${I.next()}</button>
+  </div></div>`;
+  setTimeout(()=>document.getElementById("nm")?.focus(), 200);
+}
+function saveName(){
+  const v = (document.getElementById("nm").value||"").trim().replace(/\s+/g," ").slice(0,20);
+  if(!v){ document.getElementById("nm").focus(); return; }
+  buzz(); const first = !store.get("myName","");
+  store.set("myName", v);
+  if(first) store.set("myStart", todayKey());
+  go("day/"+todayKey()); route();
 }
 
 /* ================= TIPS SHEET ================= */
@@ -490,7 +579,23 @@ function openTips(){
   el.onclick = e => { if(e.target===el) closeSheet(); };
   el.innerHTML = `<div class="sheet"><div class="grab"></div><h3>How to train</h3>
     ${(P.howTo||[]).map((t,i)=>`<div class="tipline"><b>${i+1}</b><span>${esc(t)}</span></div>`).join("")}
-    <button class="close" onclick="closeSheet()">Got it</button></div>`;
+    <button class="close" onclick="closeSheet()">Got it</button>
+    <button class="close ghost" onclick="openIntro()">How to use this app</button>
+    ${isGuest() ? `<button class="close ghost" onclick="closeSheet();renderJoin(true)">Change my name</button>` : ""}</div>`;
+  document.body.appendChild(el);
+}
+function openIntro(){
+  closeSheet();
+  const el = document.createElement("div"); el.className="sheet-bg"; el.id="sheet";
+  const steps = [
+    ["▶️","Tap <strong>Start Workout</strong>. The app shows one exercise at a time."],
+    ["📸","Watch the photo: <strong>Start → Finish</strong>. Do 12 slow reps."],
+    ["✅","After each set, tap the <strong>big green button</strong>. The rest timer starts by itself."],
+    ["🔁","Machine busy? Scroll down and <strong>pick another exercise</strong>."],
+    ["📈","After the last set, tap <strong>Easy, Good or Hard</strong>. The app tells you what weight to use next time."]];
+  el.innerHTML = `<div class="sheet intro"><div class="grab"></div><h3>Welcome${myName() ? ", "+esc(myName()) : ""}! 👋</h3>
+    ${steps.map(([e,t])=>`<div class="tipline"><b>${e}</b><span>${t}</span></div>`).join("")}
+    <button class="close" onclick="store.set('introSeen',true);closeSheet()">Let's go</button></div>`;
   document.body.appendChild(el);
 }
 function closeSheet(){ const s=document.getElementById("sheet"); if(s) s.remove(); }
@@ -519,8 +624,10 @@ function renderStep(day, n){
     $app().innerHTML = h; window.scrollTo(0,0); return;
   }
 
-  const it = s.it, ex = P.exercises[it.ex] || {name:it.ex};
+  keepAwake(isToday);
+  const it = s.it, exId = exOf(day,s), ex = P.exercises[exId] || {name:exId};
   const total = setsOf(it), done = isToday ? doneCount(s.sec,s.i) : 0, arr = isToday ? (prog()[k(s.sec,s.i)]||[]) : [];
+  if(exId !== it.ex) h += `<div class="swapnote"><span>Instead of <b>${esc(P.exercises[it.ex]?.name)}</b></span><button onclick="doSwap('${day}',${n},'')">Undo</button></div>`;
   h += videoBlock(ex);
   h += `<div class="ttl"><h2>${esc(ex.name)}</h2>
     <div class="chips"><span class="chip">${esc(ex.part)}</span>${ex.equipment && ex.equipment!=="None" ? `<span class="chip">${I.tool()} ${esc(ex.equipment)}</span>` : ""}</div></div>`;
@@ -536,7 +643,8 @@ function renderStep(day, n){
         return `<button class="circ ${j<wu?"w":""} ${on?"on":""} ${isNext?"next":""}" ${isToday?`onclick="tapSet('${day}',${n},${j})"`:"disabled"}
           aria-label="${j<wu?"Warm-up set":"Set "+(j-wu+1)}">${on ? I.check(24) : (j<wu ? "W" : j-wu+1)}</button>`; }).join("")}</div>
       <div class="lbls">${Array.from({length:total},(_,j)=>`<span>${j<wu?"Warm-up":"Set "+(j-wu+1)}</span>`).join("")}</div>`;
-    h += weightRow(it.ex);
+    h += weightRow(exId);
+    if(isToday && done >= total) h += feelRow(exId);
   } else {
     h += `<div class="reps"><strong>${esc(it.time||it.reps||"")}</strong></div>
       <div class="circles"><button class="circ ${arr[0]?"on":"next"}" ${isToday?`onclick="tapSet('${day}',${n},0)"`:"disabled"} aria-label="Done">${arr[0]?I.check(24):I.check(24,"currentColor")}</button></div>`;
@@ -550,7 +658,7 @@ function renderStep(day, n){
       ${ex.mistakes?.length ? `<div class="avoid"><b>Avoid</b>${ex.mistakes.map(x=>`<div>✕ ${esc(x)}</div>`).join("")}</div>` : ""}
       ${ex.tip ? `<p class="tip">💡 ${esc(ex.tip)}</p>` : ""}</details>`;
   }
-  h += altBlock(it.ex);
+  h += altBlock(it.ex, {day, n, cur:exId});
   h += `</div></div>`;
 
   // one big action button
@@ -563,11 +671,12 @@ function renderStep(day, n){
   } else {
     pri = `<button class="pri" onclick="buzz();go('w/${day}/${n+1}')">${last ? (isToday ? "Finish workout" : "Back to plan") : "Next exercise"} ${I.next()}</button>`;
   }
-  h += foot(day, n, null, pri);
+  const nxs = st[n+1], upNext = nxs ? P.exercises[exOf(day,nxs)]?.name : null;
+  h += foot(day, n, upNext ? `<div class="un">Up next · <b>${esc(upNext)}</b></div>` : "", pri);
   $app().innerHTML = h; window.scrollTo(0,0);
 }
-function foot(day, n, _, pri){
-  return `<div class="foot"><div class="in">
+function foot(day, n, top, pri){
+  return `<div class="foot">${top||""}<div class="in">
     <button class="sec-b" onclick="buzz();${n>0?`go('w/${day}/${n-1}')`:`go('day/${day}')`}" aria-label="Back">${I.back()}</button>${pri}</div></div>`;
 }
 function toggleWarm(i, day, n){
@@ -584,11 +693,11 @@ function tapSet(day, n, j){
   if(!it.sets){ setTimeout(()=>go(`w/${day}/${n+1}`), 350); return; }
   const allDone = done >= total, wu = it.warmupSets||0;
   const nextIdx = nextOpen(arr,total);
-  const nextEx = st[n+1]?.it ? P.exercises[st[n+1].it.ex]?.name : null;
+  const nextEx = st[n+1]?.it ? P.exercises[exOf(day,st[n+1])]?.name : null;
   const txt = allDone ? (nextEx ? "Next: " + nextEx : "Last one done!")
             : (nextIdx < wu ? "Next: Warm-up set" : `Next: Set ${nextIdx-wu+1} of ${it.sets}`) + (j < wu ? " — working weight" : "");
   const rest = j < wu ? Math.min(it.rest||60, 60) : (it.rest||60);
-  startTimer(rest, txt, allDone ? `w/${day}/${n+1}` : null);
+  startTimer(rest, txt, allDone ? `w/${day}/${n+1}` : null, allDone ? exOf(day,s) : null);
 }
 
 /* ================= DONE ================= */
@@ -597,7 +706,7 @@ function renderDone(day){
   let sets = 0; (w.main||[]).forEach((it,i)=> sets += Math.min(doneCount("main",i), setsOf(it)));
   $app().innerHTML = `<div class="screen"><div class="wrap cele">
     <div class="big">${I.check(64)}</div>
-    <h2>Great job${P.name ? ", "+esc(P.name) : ""}!</h2><p>${esc(w.name)} complete</p>
+    <h2>Great job${myName() ? ", "+esc(myName()) : ""}!</h2><p>${esc(w.name)} complete</p>
     <div class="nums"><div><strong>${(w.main||[]).length}</strong><small>exercises</small></div><div><strong>${sets}</strong><small>sets</small></div></div>
     ${nx ? `<div class="nextup"><span class="dot" style="background:${nx.w.color}"></span><div><small>Next · ${fmt(nx.d,{weekday:"long"})}</small><b>${esc(nx.w.name)}</b></div></div>` : ""}
   </div></div><div class="foot"><div class="in"><button class="pri" onclick="go('day/${day}')">Back to home</button></div></div>`;
@@ -607,24 +716,45 @@ function renderDone(day){
 /* ================= weight ================= */
 const wlog = ex => store.get("w:"+ex, []);
 function weightInfo(ex){ const L=wlog(ex), t=todayKey(); return { today:(L.find(e=>e.d===t)||{}).kg ?? null, prev:[...L].reverse().find(e=>e.d!==t) }; }
+// weight to show today, using how the last session felt
+function suggest(ex){
+  const w = weightInfo(ex), p = w.prev;
+  if(w.today != null) return {kg:w.today, note: p ? `Last time ${p.kg} kg` : "Your weight"};
+  if(!p) return {kg:0, note:"Set your weight"};
+  if(p.feel==="easy" && p.kg>0) return {kg:p.kg+2.5, note:`${p.kg} kg was easy. Try ${p.kg+2.5} kg ↑`, up:true};
+  if(p.feel==="hard") return {kg:p.kg, note:`${p.kg} kg was hard. Stay at this weight`};
+  return {kg:p.kg, note:`Last time ${p.kg} kg`};
+}
+const FEELS = [["easy","😊","Easy"],["good","💪","Good"],["hard","😓","Hard"]];
+function feelRow(ex){
+  const cur = (wlog(ex).find(e=>e.d===todayKey())||{}).feel;
+  return `<div class="howq">How was it?</div><div class="feelb">${FEELS.map(([f,e,l])=>`<button class="${cur===f?"on":""}" onclick="setFeel('${ex}','${f}',this)"><span>${e}</span>${l}</button>`).join("")}</div>`;
+}
+function setFeel(ex, f, btn){
+  buzz();
+  const L = wlog(ex), t = todayKey(), i = L.findIndex(e=>e.d===t);
+  if(i>=0) L[i].feel = f; else L.push({d:t, kg:suggest(ex).kg, feel:f});
+  store.set("w:"+ex, L.slice(-40));
+  btn.parentElement.querySelectorAll("button").forEach(b=>b.classList.toggle("on", b===btn));
+}
 function weightRow(ex){
-  const w = weightInfo(ex), shown = w.today ?? (w.prev ? w.prev.kg : 0);
+  const sg = suggest(ex);
   return `<div class="wt"><button onclick="setWeight('${ex}',-2.5)" aria-label="Less weight">−</button>
-    <div class="v"><strong id="wkg">${shown}</strong> <span>kg</span>
-    <small>${w.prev ? `Last time ${w.prev.kg} kg` : "Your weight"}</small></div>
+    <div class="v"><strong id="wkg">${sg.kg}</strong> <span>kg</span>
+    <small class="${sg.up?"up":""}">${esc(sg.note)}</small></div>
     <button onclick="setWeight('${ex}',2.5)" aria-label="More weight">+</button></div>`;
 }
 function setWeight(ex, delta){
   buzz();
-  const L = wlog(ex), t = todayKey(), info = weightInfo(ex);
-  const kg = Math.max(0, Math.round(((info.today ?? (info.prev ? info.prev.kg : 0)) + delta)*10)/10);
+  const L = wlog(ex), t = todayKey();
+  const kg = Math.max(0, Math.round((suggest(ex).kg + delta)*10)/10);
   const i = L.findIndex(e=>e.d===t); if(i>=0) L[i].kg = kg; else L.push({d:t,kg});
   store.set("w:"+ex, L.slice(-40));
   const el = document.getElementById("wkg"); if(el) el.textContent = kg;
 }
 
 /* ================= timer ================= */
-function startTimer(sec, nextTxt, nextHash){
+function startTimer(sec, nextTxt, nextHash, feelEx){
   stopTimer();
   let left = sec, total = sec; const R = 110, C = 2*Math.PI*R;
   const el = document.createElement("div"); el.className="timer"; el.id="timer";
@@ -633,6 +763,7 @@ function startTimer(sec, nextTxt, nextHash){
       <circle id="arc" cx="120" cy="120" r="${R}" stroke="#C8FF2E" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="${C}" style="transition:stroke-dashoffset 1s linear"/></svg>
       <div class="n" id="tn">${left}</div></div>
     <div class="nx">${esc(nextTxt)}</div>
+    ${feelEx ? `<div class="tfeel">${feelRow(feelEx)}</div>` : ""}
     <div class="btns"><button class="g" id="add15">+15 sec</button><button id="skip">Skip</button></div>`;
   document.body.appendChild(el);
   const paint = () => { document.getElementById("tn").textContent = left; document.getElementById("arc").style.strokeDashoffset = C*(1-left/total); };
@@ -703,11 +834,14 @@ function altsFor(id){
   if(ex.alts?.length) return {list: ex.alts.filter(a=>P.exercises[a]), own:true};
   return {list: Object.keys(P.exercises).filter(k=>k!==id && ex.sub && P.exercises[k].sub===ex.sub).slice(0,4), own:false};
 }
-function altBlock(id){
-  const {list, own} = altsFor(id); if(!list.length) return "";
+function altBlock(id, ctx){
+  let {list, own} = altsFor(id);
+  if(ctx){ list = list.filter(a=>a!==ctx.cur); if(ctx.cur!==id) list.unshift(id); }
+  if(!list.length) return "";
+  const to = a => ctx ? `lib/${a}/${ctx.day}/${ctx.n}` : `lib/${a}`;
   return `<div class="sec"><h3>${own ? "Machine busy? Do one of these" : "Other options, same muscle"}</h3></div>
     <div class="hscroll">${list.map(a=>{ const ex=P.exercises[a];
-      return `<button class="wcard alt" onclick="buzz();go('lib/${a}')"><div class="th" style="background-image:url('${thumb(ex)}')"></div>
+      return `<button class="wcard alt" onclick="buzz();go('${to(a)}')"><div class="th" style="background-image:url('${thumb(ex)}')"></div>
         <div class="nm">${esc(ex.name)}<small>${esc(ex.equipment && ex.equipment!=="None" ? ex.equipment : ex.part)}</small></div></button>`; }).join("")}</div>`;
 }
 
@@ -737,9 +871,13 @@ function renderLib(q=""){
   window.scrollTo(0,0);
 }
 function libSearch(v){ renderLib(v); const q=document.getElementById("q"); q.focus(); q.setSelectionRange(v.length,v.length); }
-function renderLibEx(id){
+function renderLibEx(id, day, n){
   const ex = P.exercises[id]; if(!ex) return go("lib");
-  $app().innerHTML = `<div class="screen" style="padding-bottom:40px"><div class="top"><button class="x" onclick="history.length>1?history.back():go('lib')" aria-label="Back">${I.back()}</button></div>
+  const slot = day && day===todayKey() ? stepsOf(workoutFor(day))[n] : null;
+  const isOrig = slot && slot.it.ex===id;
+  const act = slot ? `<div class="foot"><div class="in"><button class="sec-b" onclick="buzz();history.back()" aria-label="Back">${I.back()}</button>
+    <button class="pri ok" onclick="doSwap('${day}',${n},'${isOrig?"":id}')">${I.check(22)} ${isOrig ? "Do this one" : "Do this instead"}</button></div></div>` : "";
+  $app().innerHTML = `<div class="screen" style="padding-bottom:${slot?"120px":"40px"}"><div class="top"><button class="x" onclick="history.length>1?history.back():go('lib')" aria-label="Back">${I.back()}</button></div>
     <div class="wrap">${videoBlock(ex)}<div class="ttl"><h2>${esc(ex.name)}</h2>
     <div class="chips"><span class="chip">${esc(ex.part)}</span>${ex.equipment && ex.equipment!=="None" ? `<span class="chip">${I.tool()} ${esc(ex.equipment)}</span>` : ""}</div></div>
     ${ex.feel ? `<div class="feel">${I.target()}<span>${esc(ex.feel)}</span></div>` : ""}
@@ -747,13 +885,13 @@ function renderLibEx(id){
       <ol class="steps">${ex.steps.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>
       ${ex.mistakes?.length ? `<div class="avoid"><b>Avoid</b>${ex.mistakes.map(x=>`<div>✕ ${esc(x)}</div>`).join("")}</div>` : ""}
       ${ex.tip ? `<p class="tip">💡 ${esc(ex.tip)}</p>` : ""}</details>` : ""}
-    ${altBlock(id)}</div></div>`;
+    ${altBlock(id)}</div></div>${act}`;
   window.scrollTo(0,0);
 }
 
 /* ================= start ================= */
 if("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(()=>{});
-document.addEventListener("visibilitychange", ()=>{ if(document.visibilityState==="visible" && P) load(); });
+document.addEventListener("visibilitychange", ()=>{ if(document.visibilityState==="visible" && P){ load(); if(location.hash.startsWith("#w/")) keepAwake(true); } });
 load();
 </script>
 </body>
