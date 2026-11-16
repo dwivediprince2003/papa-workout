@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-14h",
+  "version": "2026-11-16a",
   "title": "Workout Plan",
   "greeting": "Hello Papa",
   "name": "Papa",
@@ -336,6 +336,10 @@
       "equipment": "None",
       "demo": "demos/arm_swings.webp",
       "thumb": "demos/arm_swings_t.webp",
+      "photos": [
+        "demos/real/arm_swings_0.webp",
+        "demos/real/arm_swings_1.webp"
+      ],
       "steps": [
         "Arms straight in front.",
         "Swing them open wide, then back together.",
@@ -364,6 +368,10 @@
       "equipment": "None",
       "demo": "demos/wrist_circles.webp",
       "thumb": "demos/wrist_circles_t.webp",
+      "photos": [
+        "demos/real/wrist_circles_0.webp",
+        "demos/real/wrist_circles_1.webp"
+      ],
       "steps": [
         "Hold arms in front.",
         "Turn wrists in circles.",
@@ -378,6 +386,10 @@
       "equipment": "None",
       "demo": "demos/neck_stretch.webp",
       "thumb": "demos/neck_stretch_t.webp",
+      "photos": [
+        "demos/real/neck_stretch_0.webp",
+        "demos/real/neck_stretch_1.webp"
+      ],
       "steps": [
         "Tilt your head to one side.",
         "Hold 10 seconds.",
@@ -392,6 +404,10 @@
       "equipment": "None",
       "demo": "demos/knee_circles.webp",
       "thumb": "demos/knee_circles_t.webp",
+      "photos": [
+        "demos/real/knee_circles_0.webp",
+        "demos/real/knee_circles_1.webp"
+      ],
       "steps": [
         "Feet together, hands on knees.",
         "Move knees in small circles.",
@@ -406,6 +422,10 @@
       "equipment": "None",
       "demo": "demos/ankle_circles.webp",
       "thumb": "demos/ankle_circles_t.webp",
+      "photos": [
+        "demos/real/ankle_circles_0.webp",
+        "demos/real/ankle_circles_1.webp"
+      ],
       "steps": [
         "Hold a wall. Lift one foot.",
         "Turn the ankle in circles.",
@@ -420,6 +440,10 @@
       "equipment": "None",
       "demo": "demos/toe_touch.webp",
       "thumb": "demos/toe_touch_t.webp",
+      "photos": [
+        "demos/real/toe_touch_0.webp",
+        "demos/real/toe_touch_1.webp"
+      ],
       "steps": [
         "Stand tall.",
         "Slowly reach down toward your toes. Bend knees if needed.",
@@ -435,6 +459,10 @@
       "equipment": "Chest press machine",
       "demo": "demos/chest_press_machine.webp",
       "thumb": "demos/chest_press_machine_t.webp",
+      "photos": [
+        "demos/real/chest_press_machine_0.webp",
+        "demos/real/chest_press_machine_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=P8Hx90LdGH4",
       "alts": [
         "db_bench_press",
@@ -464,6 +492,10 @@
       "equipment": "Dumbbells, Flat bench",
       "demo": "demos/db_bench_press.webp",
       "thumb": "demos/db_bench_press_t.webp",
+      "photos": [
+        "demos/real/db_bench_press_0.webp",
+        "demos/real/db_bench_press_1.webp"
+      ],
       "steps": [
         "Lie on a flat bench, a dumbbell in each hand at chest level.",
         "Feet flat on the floor.",
@@ -485,6 +517,10 @@
       "equipment": "Bench or step",
       "demo": "demos/incline_pushup.webp",
       "thumb": "demos/incline_pushup_t.webp",
+      "photos": [
+        "demos/real/incline_pushup_0.webp",
+        "demos/real/incline_pushup_1.webp"
+      ],
       "steps": [
         "Hands on a bench, a little wider than shoulders.",
         "Walk your feet back. Body straight.",
@@ -506,6 +542,10 @@
       "equipment": "Dumbbells, Incline bench",
       "demo": "demos/incline_db_press.webp",
       "thumb": "demos/incline_db_press_t.webp",
+      "photos": [
+        "demos/real/incline_db_press_0.webp",
+        "demos/real/incline_db_press_1.webp"
+      ],
       "steps": [
         "Set the bench at a small angle (about 30°).",
         "Dumbbells at your upper chest.",
@@ -526,6 +566,10 @@
       "equipment": "Smith machine, Incline bench",
       "demo": "demos/smith_incline_press.webp",
       "thumb": "demos/smith_incline_press_t.webp",
+      "photos": [
+        "demos/real/smith_incline_press_0.webp",
+        "demos/real/smith_incline_press_1.webp"
+      ],
       "steps": [
         "Put an incline bench under the Smith bar.",
         "Unhook the bar. Lower it to your upper chest.",
@@ -547,6 +591,10 @@
       "equipment": "Cable machine",
       "demo": "demos/cable_low_fly.webp",
       "thumb": "demos/cable_low_fly_t.webp",
+      "photos": [
+        "demos/real/cable_low_fly_0.webp",
+        "demos/real/cable_low_fly_1.webp"
+      ],
       "steps": [
         "Set both cables low. Hold one handle in each hand.",
         "Step forward. Arms down and a little out.",
@@ -567,6 +615,10 @@
       "equipment": "Pec deck (fly) machine",
       "demo": "demos/pec_deck.webp",
       "thumb": "demos/pec_deck_t.webp",
+      "photos": [
+        "demos/real/pec_deck_0.webp",
+        "demos/real/pec_deck_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=3jYo5cMU3d4",
       "alts": [
         "cable_fly",
@@ -594,6 +646,10 @@
       "equipment": "Cable machine",
       "demo": "demos/cable_fly.webp",
       "thumb": "demos/cable_fly_t.webp",
+      "photos": [
+        "demos/real/cable_fly_0.webp",
+        "demos/real/cable_fly_1.webp"
+      ],
       "steps": [
         "Set both cables at shoulder height. Hold one handle in each hand.",
         "Step forward. Arms open wide, elbows a little bent.",
@@ -615,6 +671,10 @@
       "equipment": "Shoulder press machine",
       "demo": "demos/machine_shoulder_press.webp",
       "thumb": "demos/machine_shoulder_press_t.webp",
+      "photos": [
+        "demos/real/machine_shoulder_press_0.webp",
+        "demos/real/machine_shoulder_press_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=BAZkFGeUy5U",
       "alts": [
         "db_shoulder_press",
@@ -643,6 +703,10 @@
       "equipment": "Dumbbells, Bench with back support",
       "demo": "demos/db_shoulder_press.webp",
       "thumb": "demos/db_shoulder_press_t.webp",
+      "photos": [
+        "demos/real/db_shoulder_press_0.webp",
+        "demos/real/db_shoulder_press_1.webp"
+      ],
       "steps": [
         "Sit on an upright bench, back on the pad.",
         "Dumbbells next to your ears, palms forward.",
@@ -663,6 +727,10 @@
       "equipment": "Smith machine, Upright bench",
       "demo": "demos/smith_shoulder_press.webp",
       "thumb": "demos/smith_shoulder_press_t.webp",
+      "photos": [
+        "demos/real/smith_shoulder_press_0.webp",
+        "demos/real/smith_shoulder_press_1.webp"
+      ],
       "steps": [
         "Put an upright bench under the Smith bar.",
         "Unhook the bar at chin height.",
@@ -683,6 +751,10 @@
       "equipment": "Light dumbbells",
       "demo": "demos/lateral_raise.webp",
       "thumb": "demos/lateral_raise_t.webp",
+      "photos": [
+        "demos/real/lateral_raise_0.webp",
+        "demos/real/lateral_raise_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=pgrWjBfaFe8",
       "alts": [
         "cable_lateral_raise",
@@ -711,6 +783,10 @@
       "equipment": "Cable machine",
       "demo": "demos/cable_lateral_raise.webp",
       "thumb": "demos/cable_lateral_raise_t.webp",
+      "photos": [
+        "demos/real/cable_lateral_raise_0.webp",
+        "demos/real/cable_lateral_raise_1.webp"
+      ],
       "steps": [
         "Set the cable low. Stand side-on, hold the handle with the far hand.",
         "Lift your arm out to the side, up to shoulder height.",
@@ -751,6 +827,10 @@
       "equipment": "Pec deck machine (facing the pad)",
       "demo": "demos/reverse_pec_deck.webp",
       "thumb": "demos/reverse_pec_deck_t.webp",
+      "photos": [
+        "demos/real/reverse_pec_deck_0.webp",
+        "demos/real/reverse_pec_deck_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=v0rJuhEa59c",
       "alts": [
         "db_rear_fly",
@@ -779,6 +859,10 @@
       "equipment": "Light dumbbells, Bench",
       "demo": "demos/db_rear_fly.webp",
       "thumb": "demos/db_rear_fly_t.webp",
+      "photos": [
+        "demos/real/db_rear_fly_0.webp",
+        "demos/real/db_rear_fly_1.webp"
+      ],
       "steps": [
         "Sit on the end of a bench and lean forward, chest near your knees.",
         "Dumbbells hanging down, elbows a little bent.",
@@ -799,6 +883,10 @@
       "equipment": "Cable machine",
       "demo": "demos/cable_rear_fly.webp",
       "thumb": "demos/cable_rear_fly_t.webp",
+      "photos": [
+        "demos/real/cable_rear_fly_0.webp",
+        "demos/real/cable_rear_fly_1.webp"
+      ],
       "steps": [
         "Set both cables at chest height. Cross them: left hand holds the right cable.",
         "Arms straight in front.",
@@ -819,6 +907,10 @@
       "equipment": "Lat pulldown machine",
       "demo": "demos/lat_pulldown.webp",
       "thumb": "demos/lat_pulldown_t.webp",
+      "photos": [
+        "demos/real/lat_pulldown_0.webp",
+        "demos/real/lat_pulldown_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=SALxEARiMkw",
       "alts": [
         "vbar_pulldown",
@@ -847,6 +939,10 @@
       "equipment": "Lat pulldown machine + V-bar",
       "demo": "demos/vbar_pulldown.webp",
       "thumb": "demos/vbar_pulldown_t.webp",
+      "photos": [
+        "demos/real/vbar_pulldown_0.webp",
+        "demos/real/vbar_pulldown_1.webp"
+      ],
       "steps": [
         "Attach the V-bar. Sit with the thigh pad tight.",
         "Hold the V-bar, chest up.",
@@ -887,6 +983,10 @@
       "equipment": "Cable machine + rope or bar",
       "demo": "demos/straight_arm_pulldown.webp",
       "thumb": "demos/straight_arm_pulldown_t.webp",
+      "photos": [
+        "demos/real/straight_arm_pulldown_0.webp",
+        "demos/real/straight_arm_pulldown_1.webp"
+      ],
       "steps": [
         "Set the cable high. Hold the rope with straight arms.",
         "Lean forward a little.",
@@ -907,6 +1007,10 @@
       "equipment": "Seated row machine",
       "demo": "demos/machine_row.webp",
       "thumb": "demos/machine_row_t.webp",
+      "photos": [
+        "demos/real/machine_row_0.webp",
+        "demos/real/machine_row_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=TeFo51Q_Nsc",
       "alts": [
         "cable_row",
@@ -934,6 +1038,10 @@
       "equipment": "Cable row machine",
       "demo": "demos/cable_row.webp",
       "thumb": "demos/cable_row_t.webp",
+      "photos": [
+        "demos/real/cable_row_0.webp",
+        "demos/real/cable_row_1.webp"
+      ],
       "steps": [
         "Sit with feet on the platform, knees a little bent.",
         "Back straight, chest up.",
@@ -954,6 +1062,10 @@
       "equipment": "Dumbbells",
       "demo": "demos/db_row.webp",
       "thumb": "demos/db_row_t.webp",
+      "photos": [
+        "demos/real/db_row_0.webp",
+        "demos/real/db_row_1.webp"
+      ],
       "steps": [
         "Hold dumbbells. Bend forward from the hips, back flat.",
         "Let your arms hang down.",
@@ -975,6 +1087,10 @@
       "equipment": "Dumbbells",
       "demo": "demos/db_shrug.webp",
       "thumb": "demos/db_shrug_t.webp",
+      "photos": [
+        "demos/real/db_shrug_0.webp",
+        "demos/real/db_shrug_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=cJRVVxmytaM",
       "alts": [
         "barbell_shrug",
@@ -1002,6 +1118,10 @@
       "equipment": "Barbell",
       "demo": "demos/barbell_shrug.webp",
       "thumb": "demos/barbell_shrug_t.webp",
+      "photos": [
+        "demos/real/barbell_shrug_0.webp",
+        "demos/real/barbell_shrug_1.webp"
+      ],
       "steps": [
         "Hold a barbell in front of your thighs.",
         "Lift your shoulders up to your ears.",
@@ -1022,6 +1142,10 @@
       "equipment": "Shrug machine",
       "demo": "demos/machine_shrug.webp",
       "thumb": "demos/machine_shrug_t.webp",
+      "photos": [
+        "demos/real/machine_shrug_0.webp",
+        "demos/real/machine_shrug_1.webp"
+      ],
       "steps": [
         "Stand in the machine, hold the handles.",
         "Lift your shoulders straight up.",
@@ -1042,6 +1166,10 @@
       "equipment": "Cable machine + straight bar",
       "demo": "demos/bar_pushdown.webp",
       "thumb": "demos/bar_pushdown_t.webp",
+      "photos": [
+        "demos/real/bar_pushdown_0.webp",
+        "demos/real/bar_pushdown_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=LXkCrxn3caQ",
       "alts": [
         "rope_pushdown",
@@ -1068,6 +1196,10 @@
       "equipment": "Cable machine + rope",
       "demo": "demos/rope_pushdown.webp",
       "thumb": "demos/rope_pushdown_t.webp",
+      "photos": [
+        "demos/real/rope_pushdown_0.webp",
+        "demos/real/rope_pushdown_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=n2FSCB4vRSA",
       "alts": [
         "bar_pushdown",
@@ -1094,6 +1226,10 @@
       "equipment": "Cable machine + V-bar",
       "demo": "demos/vbar_pushdown.webp",
       "thumb": "demos/vbar_pushdown_t.webp",
+      "photos": [
+        "demos/real/vbar_pushdown_0.webp",
+        "demos/real/vbar_pushdown_1.webp"
+      ],
       "steps": [
         "Attach the V-bar high. Hold it with both hands.",
         "Elbows close to your body.",
@@ -1114,6 +1250,10 @@
       "equipment": "Cable machine + rope",
       "demo": "demos/overhead_rope_ext.webp",
       "thumb": "demos/overhead_rope_ext_t.webp",
+      "photos": [
+        "demos/real/overhead_rope_ext_0.webp",
+        "demos/real/overhead_rope_ext_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=u4sEGN7FlzQ",
       "alts": [
         "db_overhead_ext",
@@ -1141,6 +1281,10 @@
       "equipment": "One dumbbell, Bench with back support",
       "demo": "demos/db_overhead_ext.webp",
       "thumb": "demos/db_overhead_ext_t.webp",
+      "photos": [
+        "demos/real/db_overhead_ext_0.webp",
+        "demos/real/db_overhead_ext_1.webp"
+      ],
       "steps": [
         "Sit tall. Hold one dumbbell with both hands over your head.",
         "Lower it behind your head by bending the elbows.",
@@ -1161,6 +1305,10 @@
       "equipment": "Dumbbell, Bench",
       "demo": "demos/db_kickback.webp",
       "thumb": "demos/db_kickback_t.webp",
+      "photos": [
+        "demos/real/db_kickback_0.webp",
+        "demos/real/db_kickback_1.webp"
+      ],
       "steps": [
         "One knee and hand on a bench. Dumbbell in the other hand.",
         "Upper arm close to your body, elbow bent.",
@@ -1181,6 +1329,10 @@
       "equipment": "Dumbbells or a bar",
       "demo": "demos/biceps_curl.webp",
       "thumb": "demos/biceps_curl_t.webp",
+      "photos": [
+        "demos/real/biceps_curl_0.webp",
+        "demos/real/biceps_curl_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=XE_pHwbst04",
       "alts": [
         "barbell_curl",
@@ -1213,6 +1365,10 @@
       "equipment": "Barbell or EZ-bar",
       "demo": "demos/biceps_curl_alt.webp",
       "thumb": "demos/biceps_curl_alt_t.webp",
+      "photos": [
+        "demos/real/barbell_curl_0.webp",
+        "demos/real/barbell_curl_1.webp"
+      ],
       "steps": [
         "Stand tall, hold the bar with palms up.",
         "Elbows next to your body.",
@@ -1233,6 +1389,10 @@
       "equipment": "Preacher curl machine",
       "demo": "demos/machine_preacher.webp",
       "thumb": "demos/machine_preacher_t.webp",
+      "photos": [
+        "demos/real/machine_preacher_0.webp",
+        "demos/real/machine_preacher_1.webp"
+      ],
       "steps": [
         "Sit with your upper arms on the pad.",
         "Hold the handles, arms almost straight.",
@@ -1253,6 +1413,10 @@
       "equipment": "Dumbbells",
       "demo": "demos/hammer_curl.webp",
       "thumb": "demos/hammer_curl_t.webp",
+      "photos": [
+        "demos/real/hammer_curl_0.webp",
+        "demos/real/hammer_curl_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=8XLxfXROrTo",
       "alts": [
         "rope_hammer_curl",
@@ -1279,6 +1443,10 @@
       "equipment": "Cable machine + rope",
       "demo": "demos/rope_hammer_curl.webp",
       "thumb": "demos/rope_hammer_curl_t.webp",
+      "photos": [
+        "demos/real/rope_hammer_curl_0.webp",
+        "demos/real/rope_hammer_curl_1.webp"
+      ],
       "steps": [
         "Set the cable low with the rope. Hold both ends, thumbs up.",
         "Elbows next to your body.",
@@ -1299,6 +1467,10 @@
       "equipment": "Dumbbells",
       "demo": "demos/cross_hammer_curl.webp",
       "thumb": "demos/cross_hammer_curl_t.webp",
+      "photos": [
+        "demos/real/cross_hammer_curl_0.webp",
+        "demos/real/cross_hammer_curl_1.webp"
+      ],
       "steps": [
         "Hold dumbbells, thumbs up.",
         "Curl one dumbbell up across your body toward the other shoulder.",
@@ -1318,6 +1490,10 @@
       "equipment": "Bar (light) + bench",
       "demo": "demos/wrist_curl.webp",
       "thumb": "demos/wrist_curl_t.webp",
+      "photos": [
+        "demos/real/wrist_curl_0.webp",
+        "demos/real/wrist_curl_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=3VLTzIrnb5g",
       "alts": [
         "db_wrist_curl",
@@ -1344,6 +1520,10 @@
       "equipment": "Light dumbbells, Bench",
       "demo": "demos/db_wrist_curl.webp",
       "thumb": "demos/db_wrist_curl_t.webp",
+      "photos": [
+        "demos/real/db_wrist_curl_0.webp",
+        "demos/real/db_wrist_curl_1.webp"
+      ],
       "steps": [
         "Sit. Forearms on your thighs, palms up, dumbbells in hand.",
         "Let the dumbbells roll down a little.",
@@ -1364,6 +1544,10 @@
       "equipment": "Light bar, Bench",
       "demo": "demos/reverse_wrist_curl.webp",
       "thumb": "demos/reverse_wrist_curl_t.webp",
+      "photos": [
+        "demos/real/reverse_wrist_curl_0.webp",
+        "demos/real/reverse_wrist_curl_1.webp"
+      ],
       "steps": [
         "Kneel or sit, forearms on a bench, palms down.",
         "Hold a light bar.",
@@ -1384,6 +1568,10 @@
       "equipment": "Leg press machine",
       "demo": "demos/leg_press.webp",
       "thumb": "demos/leg_press_t.webp",
+      "photos": [
+        "demos/real/leg_press_0.webp",
+        "demos/real/leg_press_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=q4W4_VJbKW0",
       "alts": [
         "hack_squat",
@@ -1412,6 +1600,10 @@
       "equipment": "Leg extension machine",
       "demo": "demos/leg_extension.webp",
       "thumb": "demos/leg_extension_t.webp",
+      "photos": [
+        "demos/real/leg_extension_0.webp",
+        "demos/real/leg_extension_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=KtgdO4QEdHk",
       "alts": [
         "goblet_squat",
@@ -1439,6 +1631,10 @@
       "equipment": "Hack squat machine",
       "demo": "demos/hack_squat.webp",
       "thumb": "demos/hack_squat_t.webp",
+      "photos": [
+        "demos/real/hack_squat_0.webp",
+        "demos/real/hack_squat_1.webp"
+      ],
       "steps": [
         "Back on the pad, shoulders under the pads.",
         "Feet shoulder-width on the platform.",
@@ -1460,6 +1656,10 @@
       "equipment": "One dumbbell",
       "demo": "demos/goblet_squat.webp",
       "thumb": "demos/goblet_squat_t.webp",
+      "photos": [
+        "demos/real/goblet_squat_0.webp",
+        "demos/real/goblet_squat_1.webp"
+      ],
       "steps": [
         "Hold a dumbbell at your chest with both hands.",
         "Feet shoulder-width apart.",
@@ -1481,6 +1681,10 @@
       "equipment": "Lying leg curl machine",
       "demo": "demos/lying_leg_curl.webp",
       "thumb": "demos/lying_leg_curl_t.webp",
+      "photos": [
+        "demos/real/lying_leg_curl_0.webp",
+        "demos/real/lying_leg_curl_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=i6m3Vp9H40Y",
       "alts": [
         "seated_leg_curl",
@@ -1509,6 +1713,10 @@
       "equipment": "Seated leg curl machine",
       "demo": "demos/seated_leg_curl.webp",
       "thumb": "demos/seated_leg_curl_t.webp",
+      "photos": [
+        "demos/real/seated_leg_curl_0.webp",
+        "demos/real/seated_leg_curl_1.webp"
+      ],
       "steps": [
         "Sit with the pad just above your heels. Lock the thigh pad.",
         "Bend your legs down and back.",
@@ -1529,6 +1737,10 @@
       "equipment": "Machine or cable, or no weight",
       "demo": "demos/standing_leg_curl.webp",
       "thumb": "demos/standing_leg_curl_t.webp",
+      "photos": [
+        "demos/real/standing_leg_curl_0.webp",
+        "demos/real/standing_leg_curl_1.webp"
+      ],
       "steps": [
         "Hold something for balance.",
         "Bend one knee and bring the heel to your bottom.",
@@ -1549,6 +1761,10 @@
       "equipment": "Dumbbells",
       "demo": "demos/db_rdl.webp",
       "thumb": "demos/db_rdl_t.webp",
+      "photos": [
+        "demos/real/db_rdl_0.webp",
+        "demos/real/db_rdl_1.webp"
+      ],
       "steps": [
         "Stand tall with dumbbells in front of your thighs.",
         "Knees soft. Push your hips back, dumbbells slide down your legs.",
@@ -1570,6 +1786,10 @@
       "equipment": "Hip adductor machine",
       "demo": "demos/adductor.webp",
       "thumb": "demos/adductor_t.webp",
+      "photos": [
+        "demos/real/adductor_0.webp",
+        "demos/real/adductor_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=CjAVezAggkI",
       "alts": [
         "cable_adduction",
@@ -1596,6 +1816,10 @@
       "equipment": "Cable machine + ankle strap",
       "demo": "demos/cable_adduction.webp",
       "thumb": "demos/cable_adduction_t.webp",
+      "photos": [
+        "demos/real/cable_adduction_0.webp",
+        "demos/real/cable_adduction_1.webp"
+      ],
       "steps": [
         "Strap the cable to the ankle near the machine.",
         "Hold the machine for balance.",
@@ -1636,6 +1860,10 @@
       "equipment": "Leg press machine",
       "demo": "demos/leg_press_calf.webp",
       "thumb": "demos/leg_press_calf_t.webp",
+      "photos": [
+        "demos/real/leg_press_calf_0.webp",
+        "demos/real/leg_press_calf_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=PYZY00hI43w",
       "alts": [
         "standing_calf_raise",
@@ -1663,6 +1891,10 @@
       "equipment": "None / Wall or step",
       "demo": "demos/standing_calf_raise.webp",
       "thumb": "demos/standing_calf_raise_t.webp",
+      "photos": [
+        "demos/real/standing_calf_raise_0.webp",
+        "demos/real/standing_calf_raise_1.webp"
+      ],
       "steps": [
         "Stand holding a wall. Toes on a step if you have one.",
         "Rise up on your toes.",
@@ -1683,6 +1915,10 @@
       "equipment": "Seated calf machine",
       "demo": "demos/seated_calf_raise.webp",
       "thumb": "demos/seated_calf_raise_t.webp",
+      "photos": [
+        "demos/real/seated_calf_raise_0.webp",
+        "demos/real/seated_calf_raise_1.webp"
+      ],
       "steps": [
         "Sit with the pad on your thighs, toes on the platform.",
         "Lower your heels for a stretch.",
@@ -1703,6 +1939,10 @@
       "equipment": "Treadmill",
       "demo": "demos/incline_walk.webp",
       "thumb": "demos/incline_walk_t.webp",
+      "photos": [
+        "demos/real/incline_walk_0.webp",
+        "demos/real/incline_walk_1.webp"
+      ],
       "video": "https://www.youtube.com/watch?v=9ccVxEvWtpA",
       "alts": [
         "stationary_bike",
@@ -1731,6 +1971,10 @@
       "equipment": "Exercise bike",
       "demo": "demos/stationary_bike.webp",
       "thumb": "demos/stationary_bike_t.webp",
+      "photos": [
+        "demos/real/stationary_bike_0.webp",
+        "demos/real/stationary_bike_1.webp"
+      ],
       "steps": [
         "Set the seat so the knee is slightly bent at the bottom.",
         "Pedal at an easy pace.",
@@ -1752,6 +1996,10 @@
       "equipment": "Stair climber machine",
       "demo": "demos/stepmill.webp",
       "thumb": "demos/stepmill_t.webp",
+      "photos": [
+        "demos/real/stepmill_0.webp",
+        "demos/real/stepmill_1.webp"
+      ],
       "steps": [
         "Start at the slowest speed.",
         "Hold the rails lightly. Stand tall.",

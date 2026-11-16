@@ -257,6 +257,20 @@ details.acc[open] summary .chev{transform:rotate(90deg)}
 .empty{text-align:center;color:var(--muted);padding:60px 10px}
 .toast{position:fixed;top:calc(14px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:50;background:var(--volt);color:var(--onvolt);
   padding:12px 18px;border-radius:14px;font-weight:800;font-size:16px;box-shadow:0 10px 30px rgba(0,0,0,.5);white-space:nowrap}
+/* demo: real photos loop start ↔ finish */
+.demo.photo{background:#000}
+.demo.photo img{object-fit:cover;padding:0}
+.demo.photo .f1{animation:flip 3.4s infinite}
+@keyframes flip{0%,44%{opacity:0}50%,94%{opacity:1}100%{opacity:0}}
+.demo.photo .lab{position:absolute;left:12px;top:12px;padding:6px 12px;border-radius:10px;font-weight:800;font-size:15px;background:var(--volt);color:var(--onvolt);box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.demo.photo .l1{animation:flip 3.4s infinite}
+.demo.photo .l0{animation:flipr 3.4s infinite}
+@keyframes flipr{0%,44%{opacity:1}50%,94%{opacity:0}100%{opacity:1}}
+.demo.photo.paused *{animation-play-state:paused}
+.dmode{display:flex;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:3px;gap:3px}
+.dmode button{padding:8px 14px;border-radius:11px;font-size:14px;font-weight:800;color:var(--muted)}
+.dmode button.on{background:var(--volt);color:var(--onvolt)}
+.vlinks{align-items:center}
 </style>
 </head>
 <body>
@@ -636,13 +650,20 @@ function beep(){
 }
 
 /* ================= video ================= */
+let demoMode = store.get("demoMode","photo");
 function videoBlock(ex){
-  const id = ytId(ex.video);
-  if(ex.demo){
-    // short looping illustration; full YouTube video stays one tap away
-    return `<div class="demo"><img src="${esc(ex.demo)}" alt="${esc(ex.name)} demo" onerror="demoFail(this)"></div>
-      <div class="vlinks">${ex.altDemo ? `<button class="alt" data-main="${esc(ex.demo)}" data-alt="${esc(ex.altDemo.url)}" data-l="${esc(ex.altDemo.label)}" onclick="swapDemo(this)">${I.play(13,"currentColor")} <span>${esc(ex.altDemo.label)}</span></button>` : "<span></span>"}
-      ${id ? `<a class="yt" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">${I.play(13,"currentColor")} Full video</a>` : ""}</div>`;
+  const id = ytId(ex.video), exId = Object.keys(P.exercises).find(k=>P.exercises[k]===ex) || "";
+  const hasP = ex.photos?.length===2, hasA = !!ex.demo;
+  if(hasP || hasA){
+    // real gym photos (start ↔ finish loop) or the muscle animation; the user can switch, choice is remembered
+    const mode = hasP && hasA ? demoMode : (hasP ? "photo" : "anim");
+    const media = mode==="photo"
+      ? `<div class="demo photo" onclick="this.classList.toggle('paused')"><img src="${esc(ex.photos[0])}" alt="${esc(ex.name)} start"><img class="f1" src="${esc(ex.photos[1])}" alt="${esc(ex.name)} finish">
+          <span class="lab l0">1 · Start</span><span class="lab l1">2 · Finish</span></div>`
+      : `<div class="demo"><img src="${esc(ex.demo)}" alt="${esc(ex.name)} demo" onerror="demoFail(this)"></div>`;
+    const toggle = hasP && hasA ? `<div class="dmode"><button class="${mode==="photo"?"on":""}" onclick="setDemo('photo','${exId}')">Real photo</button><button class="${mode==="anim"?"on":""}" onclick="setDemo('anim','${exId}')">Muscles</button></div>` : "<span></span>";
+    return `<div class="dblock" id="db-${exId}">${media}<div class="vlinks">${toggle}
+      ${id ? `<a class="yt" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">${I.play(13,"currentColor")} Full video</a>` : ""}</div></div>`;
   }
   if(!id) return "";
   const alt = ex.altVideo && ytId(ex.altVideo.url);
@@ -657,6 +678,7 @@ function swapDemo(btn){
   btn.querySelector("span").textContent = on ? btn.dataset.l : "Main version";
   btn.closest(".vlinks").previousElementSibling.querySelector("img").src = on ? btn.dataset.main : btn.dataset.alt;
 }
+function setDemo(m, exId){ buzz(); demoMode = m; store.set("demoMode", m); const el = document.getElementById("db-"+exId); if(el) el.outerHTML = videoBlock(P.exercises[exId]); }
 function demoFail(img){ const box = img.parentElement; box.classList.add("off"); box.innerHTML = `<span>Demo not loading. Tap “Full video”.</span>`; }
 function playVid(el,id){ el.onclick=null; buzz();
   el.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&playsinline=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Exercise video"></iframe>`; }

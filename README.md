@@ -8,7 +8,7 @@ A guided gym-workout app for beginners. It runs as a Progressive Web App and shi
 ## Features
 
 - **Guided sessions:** warm-up → each exercise → finisher → summary. One large action button per step ("Set 1 done"), with an automatic rest timer, sound and vibration.
-- **Short looping demos** for every exercise, with the working muscles highlighted. A full-length video link is kept as a fallback.
+- **Two demo modes:** real gym photos that loop start → finish, or an animation with the working muscles highlighted. A full-length video link is kept as a fallback.
 - **Alternatives:** every main exercise lists two or three substitutes ("Machine busy? Do one of these").
 - **Exercise library** grouped by muscle (Chest → Middle / Upper / Fly, Back → Lats / Middle / Traps, …), with search and "In your plan" badges.
 - **Progress:** warm-up and working sets tracked per day, plus a per-exercise weight log ("Last time: 20 kg") for progressive overload.
@@ -29,7 +29,7 @@ Android app (WebView) ───┘  loads the hosted app, so content updates nee
 | `plan.json` | Schedule, workouts, exercises, alternatives and copy. The only file you edit day to day. |
 | `index.html` | The whole UI: home, guided session, rest timer, library. |
 | `sw.js` | Offline cache (network-first for app/plan, cache-first for demos). |
-| `demos/` | Exercise demos: 600 px animated WebP plus 240 px thumbnails. |
+| `demos/` | Exercise demos: 600 px animated WebP plus 240 px thumbnails; `demos/real/` holds start/finish photos. |
 | `android/` | Minimal WebView shell (full screen, back button, full-screen video, external links). |
 | `.github/workflows/apk.yml` | Builds and signs the APK and publishes it as the `apk` release when `android/` changes. |
 
@@ -61,6 +61,7 @@ The first workout in `order` falls on `start`, and the order repeats from there.
   "feel": "Sides of your back, under your arms.",
   "equipment": "Lat pulldown machine",
   "demo": "demos/lat_pulldown.webp", "thumb": "demos/lat_pulldown_t.webp",
+  "photos": ["demos/real/lat_pulldown_0.webp", "demos/real/lat_pulldown_1.webp"],
   "video": "https://www.youtube.com/watch?v=…",
   "alts": ["vbar_pulldown", "reverse_grip_pulldown"],
   "steps": ["…"], "mistakes": ["…"], "tip": "…"
@@ -76,4 +77,5 @@ The workflow signs the APK with a key stored as repository secrets (`KEYSTORE_B6
 ## Credits
 
 - Exercise illustrations: [ExerciseDB](https://exercisedb.dev/) (upscaled with waifu2x).
+- Exercise photos: [free-exercise-db](https://github.com/yuhonas/free-exercise-db) (The Unlicense).
 - Full-length technique videos: linked from YouTube creators.
